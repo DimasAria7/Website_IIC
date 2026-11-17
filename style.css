@@ -1853,3 +1853,25 @@ a:focus-visible {
   }
   .unit-selector-bar .unit-tab-btn { flex: none; }
 }
+
+/* ==================== HOME: MIDTERM / FINAL GROUPS ==================== */
+.exam-group { margin-bottom: 20px; }
+
+.exam-group-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 14px 0 10px;
+}
+
+.exam-group-range {
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: var(--ink-muted);
+}
+
+.exam-group .units-overview-grid { margin-top: 0; }
+
+@media (min-width: 960px) {
+  #page-home .exam-grid-midterm { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
