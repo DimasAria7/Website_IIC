@@ -1587,38 +1587,57 @@ document.addEventListener("DOMContentLoaded", () => {
   safeInit("stories", () => { renderStories(); setupStoryControls(); });
   safeInit("quiz", () => { renderQuizQuestion(); setupQuizControls(); });
   safeInit("modal", () => setupModalControls());
-  safeInit("scroll reveal", () => setupScrollReveal());
+  safeInit("scroll reveal", () => refreshScrollReveal());
   safeInit("progress", () => updateProgressStats());
 });
 
-// Scroll reveal: home sections fade and rise as they enter the screen.
+// Scroll reveal: sections and cards fade and rise as they enter the screen, on every page.
+// Elements are tagged when their page is shown, so cards rebuilt by the app are also covered.
 // If IntersectionObserver is unsupported, nothing is hidden and content stays visible.
-function setupScrollReveal() {
+const REVEAL_SELECTOR = [
+  ".page-top-banner", ".toolbar-row", ".section-banner", ".unit-selector-bar",
+  ".unit-workspace-window", ".subtopic-card", ".dialogue-box", ".reflection-panel",
+  ".vocab-card", ".table-wrap", ".story-tabs", ".story-window", ".quiz-window",
+  ".results-panel", ".quote-banner-wrap", ".home-section-heading", ".exam-group-head",
+  ".unit-mini-card", ".site-footer .footer-box"
+].join(", ");
+
+let revealObserver = null;
+
+function getRevealObserver() {
+  if (!revealObserver) {
+    revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in-view");
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: "0px 0px -30px 0px" }
+    );
+  }
+  return revealObserver;
+}
+
+function refreshScrollReveal() {
   if (!("IntersectionObserver" in window)) return;
 
-  const targets = document.querySelectorAll(
-    "#page-home .quote-banner-wrap, #page-home .home-section-heading, #page-home .exam-group-head, #page-home .unit-mini-card, .site-footer .footer-box"
+  const targets = Array.from(document.querySelectorAll(REVEAL_SELECTOR)).filter(
+    (el) => !el.classList.contains("reveal")
   );
   if (targets.length === 0) return;
 
   document.documentElement.classList.add("reveal-ready");
-  targets.forEach((el, i) => {
+  const observer = getRevealObserver();
+  targets.forEach((el) => {
+    const siblings = el.parentElement ? Array.from(el.parentElement.children) : [];
+    const index = Math.max(siblings.indexOf(el), 0);
     el.classList.add("reveal");
-    el.style.setProperty("--reveal-delay", `${(i % 4) * 70}ms`);
+    el.style.setProperty("--reveal-delay", `${(index % 4) * 70}ms`);
+    observer.observe(el);
   });
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("in-view");
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.12, rootMargin: "0px 0px -30px 0px" }
-  );
-  targets.forEach((el) => observer.observe(el));
 }
 
 function setupGlobalAudioDelegation() {
@@ -1722,6 +1741,7 @@ function navigateTo(pageId) {
   });
 
   window.scrollTo({ top: 0, behavior: "smooth" });
+  refreshScrollReveal();
 }
 
 function setupNavigation() {
@@ -2104,6 +2124,7 @@ function selectUnit(unitNum) {
   stopSpeech();
   state.activeUnitNumber = unitNum;
   renderUnitsLab();
+  refreshScrollReveal();
 }
 
 function renderWarmup(unit) {
