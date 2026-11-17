@@ -1541,6 +1541,7 @@ const state = {
   activeUnitNumber: 9,
   unitSearchQuery: "",
   accent: "en-US",
+  voiceGender: "female",
   rate: 1,
   searchQuery: "",
   selectedCategory: "All",
@@ -1562,28 +1563,63 @@ const state = {
 // ==========================================================================
 // Init
 // ==========================================================================
+// Run each setup step on its own, so an error in one section cannot stop the others
+// (for example, the quiz topic buttons). Errors are logged to the browser console.
+function safeInit(name, fn) {
+  try {
+    fn();
+  } catch (err) {
+    console.error(`Init failed: ${name}`, err);
+  }
+}
+
 document.addEventListener("DOMContentLoaded", () => {
-  applyTheme(state.theme);
-  pickRandomQuoteOnOpen();
-  setupQuoteControls();
-  setupSpotlightControls();
-  setupNavigation();
-  setupGlobalAudioDelegation();
-  setupThemeToggle();
-  setupSpeechControls();
-  renderVocabGrid();
-  setupVocabFilters();
-  renderUnitsLab();
-  setupUnitControls();
-  renderIdiomsAndUpgrades();
-  setupIdiomFilters();
-  renderStories();
-  setupStoryControls();
-  renderQuizQuestion();
-  setupQuizControls();
-  setupModalControls();
-  updateProgressStats();
+  safeInit("theme", () => applyTheme(state.theme));
+  safeInit("quote", () => { pickRandomQuoteOnOpen(); setupQuoteControls(); });
+  safeInit("spotlight", () => setupSpotlightControls());
+  safeInit("navigation", () => setupNavigation());
+  safeInit("audio", () => setupGlobalAudioDelegation());
+  safeInit("theme toggle", () => setupThemeToggle());
+  safeInit("speech", () => setupSpeechControls());
+  safeInit("words", () => { renderVocabGrid(); setupVocabFilters(); });
+  safeInit("units", () => { renderUnitsLab(); setupUnitControls(); });
+  safeInit("idioms", () => { renderIdiomsAndUpgrades(); setupIdiomFilters(); });
+  safeInit("stories", () => { renderStories(); setupStoryControls(); });
+  safeInit("quiz", () => { renderQuizQuestion(); setupQuizControls(); });
+  safeInit("modal", () => setupModalControls());
+  safeInit("scroll reveal", () => setupScrollReveal());
+  safeInit("progress", () => updateProgressStats());
 });
+
+// Scroll reveal: home sections fade and rise as they enter the screen.
+// If IntersectionObserver is unsupported, nothing is hidden and content stays visible.
+function setupScrollReveal() {
+  if (!("IntersectionObserver" in window)) return;
+
+  const targets = document.querySelectorAll(
+    "#page-home .quote-banner-wrap, #page-home .home-section-heading, #page-home .exam-group-head, #page-home .unit-mini-card, .site-footer .footer-box"
+  );
+  if (targets.length === 0) return;
+
+  document.documentElement.classList.add("reveal-ready");
+  targets.forEach((el, i) => {
+    el.classList.add("reveal");
+    el.style.setProperty("--reveal-delay", `${(i % 4) * 70}ms`);
+  });
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("in-view");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.12, rootMargin: "0px 0px -30px 0px" }
+  );
+  targets.forEach((el) => observer.observe(el));
+}
 
 function setupGlobalAudioDelegation() {
   document.addEventListener("click", (e) => {
@@ -1722,9 +1758,21 @@ if ("speechSynthesis" in window) {
   window.speechSynthesis.addEventListener("voiceschanged", refreshVoices);
 }
 
+const MALE_VOICE_NAME = /\b(male|david|mark|daniel|alex|fred|george|james|tom|guy|ryan|arthur|oliver|aaron)\b/i;
+const FEMALE_VOICE_NAME = /\b(female|samantha|zira|susan|karen|victoria|fiona|hazel|serena|moira|tessa|google us english)\b/i;
+
 function findVoice(lang) {
   if (cachedVoices.length === 0) refreshVoices();
-  return cachedVoices.find((v) => v.lang.startsWith(lang)) || null;
+  const inLang = cachedVoices.filter((v) => v.lang.startsWith(lang));
+  if (state.voiceGender === "male") {
+    return inLang.find((v) => MALE_VOICE_NAME.test(v.name)) || null;
+  }
+  return (
+    inLang.find((v) => FEMALE_VOICE_NAME.test(v.name)) ||
+    inLang.find((v) => !MALE_VOICE_NAME.test(v.name)) ||
+    inLang[0] ||
+    null
+  );
 }
 
 function speakText(text, onEndCallback = null) {
@@ -1739,6 +1787,7 @@ function speakText(text, onEndCallback = null) {
 
   const matched = findVoice(state.accent);
   if (matched) utterance.voice = matched;
+  else if (state.voiceGender === "male") showToast("NO MALE VOICE ON THIS DEVICE");
 
   utterance.onend = () => { if (onEndCallback) onEndCallback(); };
   utterance.onerror = () => { if (onEndCallback) onEndCallback(); };
@@ -1754,6 +1803,19 @@ function stopSpeech() {
 }
 
 function setupSpeechControls() {
+  document.querySelectorAll("[data-voice]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      state.voiceGender = btn.dataset.voice;
+      document.querySelectorAll("[data-voice]").forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
+      if (state.voiceGender === "male" && !findVoice(state.accent)) {
+        showToast("NO MALE VOICE ON THIS DEVICE");
+      } else {
+        showToast(`VOICE: ${state.voiceGender.toUpperCase()}`);
+      }
+    });
+  });
+
   document.querySelectorAll("[data-accent]").forEach((btn) => {
     btn.addEventListener("click", () => {
       state.accent = btn.dataset.accent;

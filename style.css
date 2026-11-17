@@ -1904,3 +1904,73 @@ a:focus-visible {
   cursor: default;
   user-select: none;
 }
+
+/* ==================== HOME: MOBILE LAYOUT (under 600px) ==================== */
+@media (max-width: 599px) {
+  /* Hero: tighter padding and headline */
+  #page-home .hero-layout { gap: 14px; margin-bottom: 18px; }
+  #page-home .poster-block { padding: 18px; }
+  #page-home .poster-meta-top { margin-bottom: 14px; }
+  #page-home .hero-kicker { margin-bottom: 6px; }
+  #page-home .mega-headline { font-size: clamp(2.1rem, 10vw, 2.7rem); margin-bottom: 12px; }
+  #page-home .poster-lead { font-size: 0.92rem; margin-bottom: 14px; }
+  #page-home .hero-actions { gap: 8px; margin-bottom: 16px; }
+  #page-home .hero-actions .brutal-btn { min-height: 40px; }
+
+  /* Stats: one compact row of three */
+  #page-home .tech-strip { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; padding-top: 12px; }
+  #page-home .tech-strip > div:last-child { grid-column: auto; }
+  #page-home .tech-k { font-size: 0.56rem; letter-spacing: 0.02em; }
+  #page-home .tech-v { font-size: 0.7rem; line-height: 1.3; }
+
+  /* Spotlight: smaller, no empty gap */
+  #page-home .wotd-window .os-body { padding: 16px; }
+  #page-home .wotd-display { font-size: 1.9rem; margin-bottom: 6px; }
+  #page-home .wotd-definition { font-size: 0.9rem; margin-bottom: 12px; }
+  #page-home .wotd-top-row { margin-bottom: 8px; }
+
+  /* Quote and section heading */
+  #page-home .quote-banner-wrap { margin-bottom: 22px; }
+  #page-home .home-section-heading { margin-bottom: 8px; padding-bottom: 10px; }
+
+  /* Exam group headings: keep spacing even when inline fallbacks are present */
+  .exam-group { margin: 0 0 18px !important; }
+  .exam-group-head { margin: 14px 0 10px !important; gap: 8px !important; }
+  .exam-group-range { font-size: 0.8rem !important; }
+
+  /* Unit cards become a compact list: number on the left, title and summary on the right */
+  #page-home .units-overview-grid { grid-template-columns: 1fr; gap: 8px; }
+  #page-home .unit-mini-card {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    column-gap: 12px;
+    row-gap: 2px;
+    min-height: 0;
+    padding: 11px 12px;
+    box-shadow: 3px 3px 0 var(--shadow);
+  }
+  #page-home .unit-mini-card .unit-num { grid-row: 1 / span 2; margin: 0; }
+  #page-home .unit-mini-card strong { font-size: 0.9rem; line-height: 1.25; }
+  #page-home .unit-mini-card span:last-child { font-size: 0.74rem; line-height: 1.4; }
+}
+
+/* ==================== SCROLL REVEAL (home sections fade and rise on scroll) ==================== */
+/* Hidden only when JS has set up the reveal (.reveal-ready). Without JS, content stays visible. */
+.reveal-ready .reveal:not(.in-view) { opacity: 0; }
+
+/* "backwards" fill means the element returns to its normal styles afterwards,
+   so hover effects on the unit cards keep working. */
+.reveal-ready .reveal.in-view {
+  animation: revealUp 0.55s cubic-bezier(0.2, 0.7, 0.2, 1) backwards;
+  animation-delay: var(--reveal-delay, 0ms);
+}
+
+@keyframes revealUp {
+  from { opacity: 0; transform: translateY(18px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-ready .reveal:not(.in-view) { opacity: 1; }
+  .reveal-ready .reveal.in-view { animation: none; }
+}
