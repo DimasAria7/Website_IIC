@@ -22,7 +22,7 @@
   --pop-peach: #ffa94d;
   --accent-ink: #141414;
 
-  --font-main: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-main: "Helvetica Neue", Helvetica, Arimo, Arial, sans-serif;
 }
 
 [data-theme="dark"] {
@@ -1855,19 +1855,31 @@ a:focus-visible {
 }
 
 /* ==================== HOME: MIDTERM / FINAL GROUPS ==================== */
-.exam-group { margin-bottom: 20px; }
+.exam-group {
+  margin: 0 0 30px;
+}
 
 .exam-group-head {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 10px;
-  margin: 14px 0 10px;
+  margin: 22px 0 14px;
+  font-family: var(--font-main);
+}
+
+.exam-group-head .tag-pill {
+  font-size: 0.78rem;
+  font-weight: 900;
+  padding: 5px 11px;
 }
 
 .exam-group-range {
-  font-size: 0.72rem;
-  font-weight: 800;
-  color: var(--ink-muted);
+  font-family: var(--font-main);
+  font-size: 0.88rem;
+  font-weight: 900;
+  color: var(--ink);
+  letter-spacing: 0.01em;
 }
 
 .exam-group .units-overview-grid { margin-top: 0; }
