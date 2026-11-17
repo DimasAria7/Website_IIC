@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Beyond Basic: English &amp; Speaking Lab | Group 11</title>
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem("lexivibe_v6_theme");
+        if (saved) document.documentElement.setAttribute("data-theme", saved);
+      } catch (e) {}
+    })();
+  </script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- ==================== TOP NAVBAR ==================== -->
+  <header class="os-navbar">
+    <div class="container nav-flex">
+      <a href="#home" class="brand-box" data-nav="home">
+        <span class="stamp-circle bg-yellow">B</span>
+        <span class="stamp-circle bg-sky">B</span>
+        <div class="brand-stack">
+          <span class="brand-name">BEYOND BASIC</span>
+          <span class="brand-sub">GROUP 11 LAB</span>
+        </div>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Main Navigation">
+        <button class="nav-tab active" data-nav="home">HOME</button>
+        <button class="nav-tab" data-nav="words">WORDS</button>
+        <button class="nav-tab" data-nav="units">UNITS</button>
+        <button class="nav-tab" data-nav="idioms">IDIOMS</button>
+        <button class="nav-tab" data-nav="stories">STORIES</button>
+        <button class="nav-tab" data-nav="quiz">QUIZ</button>
+      </nav>
+
+      <div class="nav-right">
+        <div class="status-badge bg-mint" title="Words Mastered">
+          <span class="status-dot"></span>
+          <span id="navMasteryCount">0/16</span>
+        </div>
+        <button id="themeToggle" class="brutal-btn-sm" aria-label="Toggle Theme">
+          <span id="themeLabel">DARK</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== MAIN WORKSPACE ==================== -->
+  <main class="container workspace">
+
+    <!-- ==================== PAGE 00: HOME ==================== -->
+    <section id="page-home" class="page active" aria-labelledby="hero-headline">
+      <div class="hero-layout">
+        <div class="poster-block">
+          <div class="poster-meta-top">
+            <span class="tag-pill bg-yellow">GROUP 11 · ENGLISH LAB</span>
+          </div>
+
+          <p class="hero-kicker">SPEAKING &amp; VOCABULARY STUDIO</p>
+          <h1 id="hero-headline" class="mega-headline">
+            SPEAK BEYOND<br />
+            <span class="highlight-block bg-yellow">BASIC</span> ENGLISH.
+          </h1>
+
+          <p class="poster-lead">
+            Build confidence through practical speaking, expressive vocabulary,
+            and everyday conversations.
+          </p>
+
+          <div class="hero-actions">
+            <button class="brutal-btn bg-yellow hero-primary" data-nav="units">
+              EXPLORE UNITS <span aria-hidden="true">→</span>
+            </button>
+            <button class="brutal-btn bg-sky" data-nav="words">EXPLORE 16 WORDS</button>
+            <button class="brutal-btn hero-quiz-btn" data-nav="quiz">TAKE A QUICK QUIZ</button>
+          </div>
+
+          <div class="tech-strip">
+            <div>
+              <span class="tech-k">LEARNING PATH</span>
+              <span class="tech-v">13 SPEAKING UNITS</span>
+            </div>
+            <div>
+              <span class="tech-k">VOCABULARY</span>
+              <span class="tech-v">16 EXPRESSIVE WORDS</span>
+            </div>
+            <div>
+              <span class="tech-k">YOUR PROGRESS</span>
+              <span class="tech-v" id="homeMasteredStat">0 / 16 MASTERED</span>
+            </div>
+          </div>
+        </div>
+
+        <aside class="os-window wotd-window" aria-label="Featured Word">
+          <div class="os-titlebar bg-sky">
+            <div class="os-dots"><span></span><span></span><span></span></div>
+            <span class="os-title">WORD SPOTLIGHT</span>
+            <div class="quote-bar-actions">
+              <button id="spotlightSpeakBtn" class="mini-audio-btn">
+                <svg class="ui-icon-xs" viewBox="0 0 24 24" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+                LISTEN
+              </button>
+              <button id="spotlightShuffleBtn" class="mini-audio-btn" title="Next Word" aria-label="Next word">
+                <svg class="ui-icon-xs" viewBox="0 0 24 24" aria-hidden="true"><polyline points="23 4 23 10 17 10"></polyline><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path></svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="os-body">
+            <div class="wotd-top-row">
+              <span id="spotlightCat" class="tag-pill bg-yellow">NOUN // NATURE</span>
+              <span id="spotlightIpa" class="ipa-tag">/ˈpet.rɪ.kɔːr/</span>
+            </div>
+            <h2 id="spotlightWord" class="wotd-display">PETRICHOR</h2>
+            <p id="spotlightDef" class="wotd-definition"></p>
+            <div class="upgrade-box">
+              <div id="spotlightOld" class="upgrade-old"></div>
+              <div id="spotlightNew" class="upgrade-new"></div>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+  <!-- ==================== DAILY QUOTE ==================== -->
+  <section class="quote-banner-wrap" aria-label="Daily Quote">
+    <div class="quote-strip">
+        <span class="tag-pill bg-coral">QUOTE</span>
+        <p id="randomQuoteText" class="quote-text"></p>
+        <div class="quote-actions">
+          <span id="randomQuoteAuthor" class="quote-author"></span>
+          <button id="speakQuoteBtn" class="icon-btn bg-sky" title="Listen" aria-label="Listen to quote">
+            <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path><path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path></svg>
+          </button>
+          <button id="newQuoteBtn" class="icon-btn bg-yellow" title="New Quote" aria-label="New quote">
+            <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><polyline points="23 4 23 10 17 10"></polyline><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path></svg>
+          </button>
+        </div>
+    </div>
+  </section>
+
+      <div class="home-section-heading">
+        <div>
+          <span class="section-eyebrow">YOUR LEARNING PATH</span>
+          <h2>Speaking modules</h2>
+        </div>
+        <span class="section-count">UNITS 01–14</span>
+      </div>
+
+      <div class="units-overview-grid">
+        <button class="unit-mini-card" data-open-unit="1">
+          <span class="unit-num bg-yellow">UNIT 01 · MIDTERM</span>
+          <strong>Getting to Know You</strong>
+          <span>Open and close conversations, introduce yourself</span>
+        </button>
+        <button class="unit-mini-card" data-open-unit="2">
+          <span class="unit-num bg-mint">UNIT 02 · MIDTERM</span>
+          <strong>Telling About Routines</strong>
+          <span>Describe daily routines, jobs, and chores</span>
+        </button>
+        <button class="unit-mini-card" data-open-unit="3">
+          <span class="unit-num bg-sky">UNIT 03 · MIDTERM</span>
+          <strong>Talking About Habits</strong>
+          <span>Be used to, used to, and frequency adverbs</span>
+        </button>
+        <button class="unit-mini-card" data-open-unit="4">
+          <span class="unit-num bg-coral">UNIT 04 · MIDTERM</span>
+          <strong>Describing Objects</strong>
+          <span>Adjective order and object details</span>
+        </button>
+        <button class="unit-mini-card" data-open-unit="5">
+          <span class="unit-num bg-lilac">UNIT 05 · MIDTERM</span>
+          <strong>Describing People</strong>
+          <span>Physical appearance and personality traits</span>
+        </button>
+        <button class="unit-mini-card" data-open-unit="6">
+          <span class="unit-num bg-peach">UNIT 06 · MIDTERM</span>
+          <strong>Help & Permission</strong>
+          <span>Ask for help, permission, and polite requests</span>
+        </button>
+        <button class="unit-mini-card" data-open-unit="7">
+          <span class="unit-num bg-yellow">UNIT 07 · MIDTERM</span>
+          <strong>Directions & Instructions</strong>
+          <span>Ask for and give directions and steps</span>
+        </button>
+        <button class="unit-mini-card" data-open-unit="9">
+          <span class="unit-num bg-yellow">UNIT 09 · FINAL</span>
+          <strong>Social Conversations</strong>
+          <span>Open, maintain, close &amp; share opinions</span>
+        </button>
+        <button class="unit-mini-card" data-open-unit="10">
+          <span class="unit-num bg-mint">UNIT 10 · FINAL</span>
+          <strong>Story &amp; News Report</strong>
+          <span>Retell events &amp; report the 5W+1H</span>
+        </button>
+        <button class="unit-mini-card" data-open-unit="11">
+          <span class="unit-num bg-sky">UNIT 11 · FINAL</span>
+          <strong>Recent Changes</strong>
+          <span>Compare past habits with present life</span>
+        </button>
+        <button class="unit-mini-card" data-open-unit="12">
+          <span class="unit-num bg-coral">UNIT 12 · FINAL</span>
+          <strong>Job Interview Hypotheticals</strong>
+          <span>Handle “what if” scenarios</span>
+        </button>
+        <button class="unit-mini-card" data-open-unit="13">
+          <span class="unit-num bg-lilac">UNIT 13 · FINAL</span>
+          <strong>Dealing with Complaints</strong>
+          <span>Apologize sincerely and show empathy</span>
+        </button>
+        <button class="unit-mini-card" data-open-unit="14">
+          <span class="unit-num bg-peach">UNIT 14 · FINAL</span>
+          <strong>Conflict Resolution</strong>
+          <span>Give advice and explain clearly</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ==================== PAGE 01: RARE WORDS ==================== -->
+    <section id="page-words" class="page" aria-labelledby="words-heading">
+      <div class="page-top-banner">
+        <div>
+          <span class="tag-pill bg-sky">VOCABULARY // 16 WORDS</span>
+          <h1 id="words-heading" class="page-headline">RARE &amp; EXPRESSIVE WORDS</h1>
+        </div>
+
+        <div class="control-cluster" role="group" aria-label="Voice Settings">
+          <div class="seg-group">
+            <span class="seg-label">ACCENT</span>
+            <button class="seg-btn active" data-accent="en-US">US</button>
+            <button class="seg-btn" data-accent="en-GB">UK</button>
+          </div>
+          <div class="seg-group">
+            <span class="seg-label">SPEED</span>
+            <button class="seg-btn active" data-rate="1">1.0X</button>
+            <button class="seg-btn" data-rate="0.72">0.7X</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="toolbar-row">
+        <div class="search-box">
+          <span class="search-prefix bg-yellow">FIND</span>
+          <input
+            type="search"
+            id="wordSearchInput"
+            placeholder="Search word or meaning..."
+            aria-label="Search vocabulary"
+          />
+        </div>
+
+        <div class="filter-pills" id="categoryPills">
+          <button class="cat-pill active" data-cat="All">ALL (16)</button>
+          <button class="cat-pill" data-cat="Emotion & Mind">EMOTION</button>
+          <button class="cat-pill" data-cat="Nature & Atmosphere">NATURE</button>
+          <button class="cat-pill" data-cat="Character & Style">CHARACTER</button>
+          <button class="cat-pill" data-cat="Time & Society">TIME</button>
+          <button class="cat-pill" data-cat="Mastered">MASTERED</button>
+        </div>
+      </div>
+
+      <div id="vocabGrid" class="vocab-grid"></div>
+    </section>
+
+    <!-- ==================== PAGE 02: UNITS 01–14 SPEAKING LAB ==================== -->
+    <section id="page-units" class="page" aria-labelledby="units-heading">
+      <div class="page-top-banner">
+        <div>
+          <span class="tag-pill bg-yellow">SPEAKING SYLLABUS</span>
+          <h1 id="units-heading" class="page-headline">COMMUNICATION LAB</h1>
+        </div>
+        <p class="banner-note">
+          Pick one unit tab or search across all speaking formulas and example phrases.
+        </p>
+      </div>
+
+      <!-- Search Bar for Units -->
+      <div class="toolbar-row">
+        <div class="search-box">
+          <span class="search-prefix bg-yellow">FIND</span>
+          <input
+            type="search"
+            id="unitSearchInput"
+            placeholder="Search phrases, skills, or units..."
+            aria-label="Search speaking units and phrases"
+          />
+        </div>
+      </div>
+
+      <!-- Color-Coded Unit Tabs -->
+      <div class="unit-selector-bar" id="unitTabsBar" role="tablist" aria-label="Select Unit 09 to 14"></div>
+
+      <!-- Active Unit Card -->
+      <article class="os-window unit-workspace-window">
+        <div id="unitWindowBar" class="os-titlebar bg-yellow">
+          <div class="os-dots"><span></span><span></span><span></span></div>
+          <span id="unitWindowCode" class="os-title">UNIT 09 // SOCIAL SITUATIONS</span>
+          <span id="unitTopicCount" class="os-title">4 KEY SKILLS</span>
+        </div>
+
+        <div class="os-body unit-body-pad">
+          <div class="unit-head-compact">
+            <h2 id="unitTitle" class="unit-main-title"></h2>
+            <p id="unitSummary" class="unit-lead-text"></p>
+          </div>
+
+          <!-- Key Expressions Grid (Clean & Scannable) -->
+          <details id="unitReadFirst" class="read-first" open>
+            <summary>READ FIRST: key pattern and common mistake</summary>
+            <div id="unitReadFirstBody" class="read-first-body"></div>
+          </details>
+
+          <div id="unitSubtopicsGrid" class="unit-subtopics-grid"></div>
+
+          <!-- Compact Model Dialogue -->
+          <div id="unitDialogueBox" class="dialogue-box">
+            <div class="dialogue-head">
+              <div>
+                <span class="tag-pill bg-mint">QUICK DIALOGUE</span>
+                <h3 id="unitDialogueTitle" class="dialogue-title"></h3>
+              </div>
+              <button id="playUnitDialogueBtn" class="brutal-btn-sm bg-sky">
+                <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+                LISTEN
+              </button>
+            </div>
+            <div id="unitDialogueLines" class="dialogue-lines"></div>
+          </div>
+
+          <!-- Compact Practice Bar -->
+          <div id="unitPracticePanel" class="reflection-panel" style="margin-top: 18px;">
+            <!-- Warm-up: one multiple-choice question from this unit -->
+            <div id="unitWarmupBox" class="warmup-box">
+              <div class="practice-header-row">
+                <strong class="inline-icon-label">QUICK WARM-UP:</strong>
+              </div>
+              <p id="unitWarmupClue" class="warmup-clue"></p>
+              <div id="unitWarmupOptions" class="options-stack" role="group" aria-label="Warm-up options"></div>
+              <div id="unitWarmupFeedback" class="feedback-box hidden"></div>
+            </div>
+
+            <div class="practice-header-row">
+              <strong class="inline-icon-label">
+                <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+                QUICK PRACTICE:
+              </strong>
+              <span id="unitPracticePrompt" class="prompt-inline"></span>
+            </div>
+            <div class="inline-practice-row">
+              <input
+                type="text"
+                id="unitPracticeInput"
+                placeholder="Type your 1–2 sentence practice response..."
+              />
+              <button id="saveUnitPracticeBtn" class="brutal-btn-sm bg-yellow">SAVE</button>
+            </div>
+            <span id="unitPracticeSavedMsg" class="saved-status"></span>
+            <div class="example-row">
+              <button id="showExampleBtn" class="brutal-btn-sm bg-lilac" type="button">SHOW EXAMPLE</button>
+            </div>
+            <p id="unitExampleBox" class="model-answer hidden"></p>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- ==================== PAGE 03: IDIOMS & UPGRADES ==================== -->
+    <section id="page-idioms" class="page" aria-labelledby="idioms-heading">
+      <div class="page-top-banner">
+        <div>
+          <span class="tag-pill bg-peach">NATIVE EXPRESSIONS</span>
+          <h1 id="idioms-heading" class="page-headline">IDIOMS &amp; UPGRADES</h1>
+        </div>
+        <p class="banner-note">
+          Short, everyday idioms and instant upgrades from textbook English to natural speech.
+        </p>
+      </div>
+
+      <!-- Search Bar for Idioms & Upgrades -->
+      <div class="toolbar-row">
+        <div class="search-box">
+          <span class="search-prefix bg-yellow">FIND</span>
+          <input
+            type="search"
+            id="idiomSearchInput"
+            placeholder="Search idiom, meaning, or phrase..."
+            aria-label="Search idioms and phrase upgrades"
+          />
+        </div>
+      </div>
+
+      <div id="idiomsGrid" class="vocab-grid" style="margin-bottom: 34px;"></div>
+
+      <div class="section-banner">
+        <span class="sec-num bg-mint">UPGRADES</span>
+        <h2>BASIC VS. NATURAL PHRASES</h2>
+      </div>
+
+      <div class="os-window">
+        <div class="os-titlebar bg-mint">
+          <div class="os-dots"><span></span><span></span><span></span></div>
+          <span class="os-title">QUICK PHRASE SWAP</span>
+          <span id="upgradesCountBadge" class="os-title">6 PATTERNS</span>
+        </div>
+        <div class="table-wrap">
+          <table class="brutal-table">
+            <thead>
+              <tr>
+                <th>TOPIC</th>
+                <th>BASIC</th>
+                <th>NATURAL</th>
+                <th>AUDIO</th>
+              </tr>
+            </thead>
+            <tbody id="upgradesTableBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== PAGE 04: SHORT STORIES ==================== -->
+    <section id="page-stories" class="page" aria-labelledby="stories-heading">
+      <div class="page-top-banner">
+        <div>
+          <span class="tag-pill bg-lilac">CONTEXT READING</span>
+          <h1 id="stories-heading" class="page-headline">SHORT STORIES</h1>
+        </div>
+        <p class="banner-note">
+          Tap any <span class="demo-chip bg-yellow">COLORED WORD</span> to see its meaning, origin, and audio.
+        </p>
+      </div>
+
+      <div class="story-tabs" id="storyTabs" role="tablist"></div>
+
+      <article class="os-window story-window">
+        <div class="os-titlebar bg-lilac">
+          <div class="os-dots"><span></span><span></span><span></span></div>
+          <span id="storyWindowFile" class="os-title">STORY 01</span>
+          <span id="storyReadTime" class="os-title">1 MIN READ</span>
+        </div>
+
+        <div class="os-body story-content-pad">
+          <div class="story-controls-bar">
+            <span id="storyTag" class="tag-pill bg-yellow">TRAVEL</span>
+            <div class="story-btn-group">
+              <button id="fontDecreaseBtn" class="brutal-btn-sm" title="Smaller Text">A-</button>
+              <button id="fontIncreaseBtn" class="brutal-btn-sm" title="Larger Text">A+</button>
+              <button id="readStoryAloudBtn" class="brutal-btn-sm bg-sky">
+                <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+                READ ALOUD
+              </button>
+            </div>
+          </div>
+
+          <h2 id="storyTitle" class="story-headline"></h2>
+          <p id="storyAuthor" class="story-byline"></p>
+
+          <div id="storyBody" class="story-paragraphs"></div>
+
+          <div class="reflection-panel" style="margin-top: 22px;">
+            <div class="practice-header-row">
+              <strong class="inline-icon-label">
+                <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+                TRY IT:
+              </strong>
+              <span id="storyPrompt" class="prompt-inline"></span>
+            </div>
+            <div class="inline-practice-row">
+              <input
+                type="text"
+                id="reflectionInput"
+                placeholder="Write 1 sentence using a highlighted word..."
+              />
+              <button id="saveReflectionBtn" class="brutal-btn-sm bg-mint">SAVE</button>
+            </div>
+            <span id="reflectionSavedMsg" class="saved-status"></span>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- ==================== PAGE 05: QUIZ ==================== -->
+    <section id="page-quiz" class="page" aria-labelledby="quiz-heading">
+      <div class="page-top-banner">
+        <div>
+          <span class="tag-pill bg-mint">SELF-CHECK</span>
+          <h1 id="quiz-heading" class="page-headline">PRACTICE QUIZ</h1>
+        </div>
+
+        <div class="seg-group" role="group" aria-label="Select Quiz Deck">
+          <span class="seg-label">TOPIC</span>
+          <button class="seg-btn active" data-quiz-mode="units">UNITS</button>
+          <button class="seg-btn" data-quiz-mode="words">WORDS</button>
+          <button class="seg-btn" data-quiz-mode="idioms">IDIOMS</button>
+        </div>
+
+        <div id="quizUnitGroup" class="control-cluster" role="group" aria-label="Select unit">
+          <div class="seg-group">
+            <span class="seg-label">UNIT</span>
+            <button class="seg-btn active" data-quiz-unit="all">ALL</button>
+            <button class="seg-btn" data-quiz-unit="01">01</button><button class="seg-btn" data-quiz-unit="02">02</button><button class="seg-btn" data-quiz-unit="03">03</button><button class="seg-btn" data-quiz-unit="04">04</button><button class="seg-btn" data-quiz-unit="05">05</button><button class="seg-btn" data-quiz-unit="06">06</button><button class="seg-btn" data-quiz-unit="07">07</button><button class="seg-btn" data-quiz-unit="09">09</button>
+            <button class="seg-btn" data-quiz-unit="10">10</button>
+            <button class="seg-btn" data-quiz-unit="11">11</button>
+            <button class="seg-btn" data-quiz-unit="12">12</button>
+            <button class="seg-btn" data-quiz-unit="13">13</button>
+            <button class="seg-btn" data-quiz-unit="14">14</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="os-window quiz-window">
+        <div class="os-titlebar bg-mint">
+          <div class="os-dots"><span></span><span></span><span></span></div>
+          <span id="quizCounter" class="os-title">QUESTION 01 / 12</span>
+          <span id="quizScoreBadge" class="os-title">SCORE: 0</span>
+        </div>
+
+        <div class="os-body quiz-body-pad">
+          <div class="brutal-progress" aria-hidden="true">
+            <div id="quizProgressBar" class="brutal-progress-fill bg-yellow"></div>
+          </div>
+
+          <div id="quizQuestionArea">
+            <span id="quizClueLabel" class="q-label">PROMPT:</span>
+            <blockquote id="quizDefinition" class="definition-box"></blockquote>
+
+            <div id="quizOptions" class="options-stack" role="group" aria-label="Answer options"></div>
+
+            <div id="quizFeedback" class="feedback-box hidden"></div>
+
+            <div class="quiz-next-row">
+              <button id="nextQuestionBtn" class="brutal-btn bg-yellow hidden">
+                NEXT →
+              </button>
+            </div>
+          </div>
+
+          <div id="quizResultArea" class="results-panel hidden">
+            <div id="resultBadge" class="result-stamp bg-yellow">12/12</div>
+            <h2 id="resultHeading" class="result-title">DONE!</h2>
+            <p id="resultSummary" class="result-desc"></p>
+            <div id="resultReviewList" class="review-list"></div>
+            <div class="result-btn-row">
+              <button id="retakeQuizBtn" class="brutal-btn bg-yellow">
+                <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><polyline points="23 4 23 10 17 10"></polyline><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path></svg>
+                RETAKE
+              </button>
+              <button class="brutal-btn bg-sky" data-nav="units">REVIEW UNITS</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="container site-footer">
+    <div class="footer-box">
+      <div class="footer-brand">
+        <span class="stamp-circle bg-yellow">11</span>
+        <strong>BEYOND BASIC: CREATED BY GROUP 11</strong>
+      </div>
+      <span class="tag-pill bg-sky">ENGLISH COMMUNICATION &amp; VOCABULARY</span>
+    </div>
+  </footer>
+
+  <!-- ==================== MOBILE BOTTOM DOCK (<960px) ==================== -->
+  <nav class="mobile-dock" aria-label="Mobile Navigation">
+    <button class="dock-btn active" data-nav="home">
+      <span class="dock-txt">HOME</span>
+    </button>
+    <button class="dock-btn" data-nav="words">
+      <span class="dock-txt">WORDS</span>
+    </button>
+    <button class="dock-btn" data-nav="units">
+      <span class="dock-txt">UNITS</span>
+    </button>
+    <button class="dock-btn" data-nav="idioms">
+      <span class="dock-txt">IDIOMS</span>
+    </button>
+    <button class="dock-btn" data-nav="stories">
+      <span class="dock-txt">STORY</span>
+    </button>
+    <button class="dock-btn" data-nav="quiz">
+      <span class="dock-txt">QUIZ</span>
+    </button>
+  </nav>
+
+  <!-- ==================== WORD INSPECTOR MODAL ==================== -->
+  <div id="wordModalBackdrop" class="modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="modalWordTitle">
+    <div class="os-window modal-window">
+      <div class="os-titlebar bg-yellow">
+        <div class="os-dots"><span></span><span></span><span></span></div>
+        <span class="os-title">WORD CARD</span>
+        <button id="closeModalBtn" class="close-x" aria-label="Close modal">
+          <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+      <div class="os-body">
+        <span id="modalWordCat" class="tag-pill bg-sky"></span>
+        <h3 id="modalWordTitle" class="modal-word-big"></h3>
+        <p id="modalWordIpa" class="modal-ipa-txt"></p>
+        <p id="modalWordDef" class="modal-def-txt"></p>
+        <p id="modalWordOrigin" class="modal-origin-txt"></p>
+        <div class="modal-ex-panel">
+          <p id="modalWordEx" class="modal-ex-txt"></p>
+        </div>
+        <div class="modal-btn-row">
+          <button id="modalSpeakBtn" class="brutal-btn-sm bg-sky">
+            <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+            LISTEN
+          </button>
+          <button id="modalMasterBtn" class="brutal-btn-sm bg-mint">+ MASTERED</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div id="toast" class="brutal-toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
