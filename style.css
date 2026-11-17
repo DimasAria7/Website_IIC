@@ -1887,3 +1887,20 @@ a:focus-visible {
 @media (min-width: 960px) {
   #page-home .exam-grid-midterm { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 }
+
+/* ==================== SEGMENT LABELS (TOPIC, UNIT, ACCENT, SPEED, VOICE) ==================== */
+/* Labels look like tags, not buttons, and ignore taps */
+.seg-label {
+  display: inline-flex;
+  align-items: center;
+  padding: 0 10px;
+  background: var(--ink);
+  color: var(--surface);
+  font-size: 0.68rem;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  pointer-events: none;
+  cursor: default;
+  user-select: none;
+}

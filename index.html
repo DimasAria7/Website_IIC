@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css?v=5" />
 </head>
 <body>
   <!-- ==================== TOP NAVBAR ==================== -->
@@ -152,10 +152,10 @@
         <span class="section-count">UNITS 01–14</span>
       </div>
 
-      <div class="exam-group">
-        <div class="exam-group-head">
+      <div class="exam-group" style="margin: 0 0 30px;">
+        <div class="exam-group-head" style="display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin: 22px 0 14px;">
           <span class="tag-pill bg-sky">MIDTERM EXAM</span>
-          <span class="exam-group-range">UNIT 01–07</span>
+          <span class="exam-group-range" style="font-family: Helvetica, Arimo, Arial, sans-serif; font-size: 0.88rem; font-weight: 900; color: var(--ink);">UNIT 01–07</span>
         </div>
         <div class="units-overview-grid exam-grid-midterm">
           <button class="unit-mini-card" data-open-unit="1">
@@ -196,10 +196,10 @@
         </div>
       </div>
 
-      <div class="exam-group">
-        <div class="exam-group-head">
+      <div class="exam-group" style="margin: 0 0 30px;">
+        <div class="exam-group-head" style="display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin: 22px 0 14px;">
           <span class="tag-pill bg-coral">FINAL EXAM</span>
-          <span class="exam-group-range">UNIT 09–14</span>
+          <span class="exam-group-range" style="font-family: Helvetica, Arimo, Arial, sans-serif; font-size: 0.88rem; font-weight: 900; color: var(--ink);">UNIT 09–14</span>
         </div>
         <div class="units-overview-grid exam-grid-final">
           <button class="unit-mini-card" data-open-unit="9">
@@ -644,6 +644,6 @@
   <!-- Toast -->
   <div id="toast" class="brutal-toast" role="status" aria-live="polite"></div>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=5"></script>
 </body>
 </html>
