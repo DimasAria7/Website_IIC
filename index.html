@@ -15,9 +15,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=8" />
+  <link rel="stylesheet" href="style.css?v=16" />
 </head>
-<body>
+<body class="logged-out">
   <!-- ==================== TOP NAVBAR ==================== -->
   <header class="os-navbar">
     <div class="container nav-flex">
@@ -42,8 +42,9 @@
       <div class="nav-right">
         <div class="status-badge bg-mint" title="Words Mastered">
           <span class="status-dot"></span>
-          <span id="navMasteryCount">0/16</span>
+          <span id="navMasteryCount">0/100</span>
         </div>
+        <button id="navProfileBtn" class="profile-chip" data-nav="profile" aria-label="Open profile"></button>
         <button id="themeToggle" class="brutal-btn-sm" aria-label="Toggle Theme">
           <span id="themeLabel">DARK</span>
         </button>
@@ -55,7 +56,50 @@
   <main class="container workspace">
 
     <!-- ==================== PAGE 00: HOME ==================== -->
-    <section id="page-home" class="page active" aria-labelledby="hero-headline">
+    <section id="page-login" class="page active" aria-labelledby="login-heading">
+      <div class="auth-layout">
+        <div class="auth-brand">
+          <span class="tag-pill bg-yellow">GROUP 11 · ENGLISH LAB</span>
+          <h1 id="login-heading" class="auth-title">Speak beyond basic English.</h1>
+          <p class="auth-lead">Practice real conversations, build vocabulary, and track your progress across every unit.</p>
+          <ul class="auth-points">
+            <li><span class="auth-dot bg-mint" aria-hidden="true"></span>Units for midterm and final exams</li>
+            <li><span class="auth-dot bg-sky" aria-hidden="true"></span>Quizzes with instant feedback</li>
+            <li><span class="auth-dot bg-coral" aria-hidden="true"></span>Progress saved to your account</li>
+          </ul>
+        </div>
+
+        <div class="os-window auth-card">
+          <div class="auth-card-head">SIGN IN</div>
+          <div class="auth-card-body">
+            <h2 class="auth-card-title">Get started</h2>
+            <p class="login-sub">Enter your name and email. We will send you a sign-in link.</p>
+            <form id="loginForm" class="login-form">
+              <label class="field">
+                <span>NAME</span>
+                <input id="loginName" type="text" maxlength="40" placeholder="e.g. Ariel" autocomplete="name" />
+              </label>
+              <label class="field">
+                <span>EMAIL</span>
+                <input id="loginEmail" type="email" maxlength="80" placeholder="you@example.com" autocomplete="email" />
+              </label>
+              <p id="loginError" class="login-error" role="alert"></p>
+              <p id="loginMessage" class="login-msg" role="status"></p>
+              <button type="submit" class="brutal-btn bg-yellow auth-submit">SEND SIGN-IN LINK →</button>
+            </form>
+
+            <div id="loginDivider" class="login-divider"><span>OR</span></div>
+            <button id="googleLoginBtn" type="button" class="brutal-btn login-google">
+              <svg class="google-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.4h6.5c-.3 1.5-1.1 2.7-2.4 3.6v3h3.9c2.3-2.1 3.5-5.2 3.5-8.7z"/><path fill="#34A853" d="M12 24c3.2 0 6-1.1 7.9-2.9l-3.9-3c-1.1.7-2.5 1.2-4 1.2-3.1 0-5.7-2.1-6.6-4.9H1.4v3.1C3.4 21.3 7.4 24 12 24z"/><path fill="#FBBC05" d="M5.4 14.4c-.2-.7-.4-1.5-.4-2.4s.1-1.6.4-2.4V6.5H1.4C.5 8.2 0 10 0 12s.5 3.8 1.4 5.5l4-3.1z"/><path fill="#EA4335" d="M12 4.8c1.7 0 3.3.6 4.5 1.8l3.4-3.4C17.9 1.2 15.2 0 12 0 7.4 0 3.4 2.7 1.4 6.5l4 3.1C6.3 6.9 8.9 4.8 12 4.8z"/></svg>
+              CONTINUE WITH GOOGLE
+            </button>
+            <p class="login-note">No password needed. Your progress is saved to your account, so you can use any device.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="page-home" class="page" aria-labelledby="hero-headline">
       <div class="hero-layout">
         <div class="poster-block">
           <div class="poster-meta-top">
@@ -77,7 +121,7 @@
             <button class="brutal-btn bg-yellow hero-primary" data-nav="units">
               EXPLORE UNITS <span aria-hidden="true">→</span>
             </button>
-            <button class="brutal-btn bg-sky" data-nav="words">EXPLORE 16 WORDS</button>
+            <button class="brutal-btn bg-sky" data-nav="words">EXPLORE 100 WORDS</button>
             <button class="brutal-btn hero-quiz-btn" data-nav="quiz">TAKE A QUICK QUIZ</button>
           </div>
 
@@ -88,11 +132,11 @@
             </div>
             <div>
               <span class="tech-k">VOCABULARY</span>
-              <span class="tech-v">16 EXPRESSIVE WORDS</span>
+              <span class="tech-v">100 EXPRESSIVE WORDS</span>
             </div>
             <div>
               <span class="tech-k">YOUR PROGRESS</span>
-              <span class="tech-v" id="homeMasteredStat">0 / 16 MASTERED</span>
+              <span class="tech-v" id="homeMasteredStat">0 / 100 MASTERED</span>
             </div>
           </div>
         </div>
@@ -240,7 +284,7 @@
     <section id="page-words" class="page" aria-labelledby="words-heading">
       <div class="page-top-banner">
         <div>
-          <span class="tag-pill bg-sky">VOCABULARY // 16 WORDS</span>
+          <span class="tag-pill bg-sky">VOCABULARY // 100 WORDS</span>
           <h1 id="words-heading" class="page-headline">RARE &amp; EXPRESSIVE WORDS</h1>
         </div>
 
@@ -275,7 +319,7 @@
         </div>
 
         <div class="filter-pills" id="categoryPills">
-          <button class="cat-pill active" data-cat="All">ALL (16)</button>
+          <button class="cat-pill active" data-cat="All">ALL (100)</button>
           <button class="cat-pill" data-cat="Emotion & Mind">EMOTION</button>
           <button class="cat-pill" data-cat="Nature & Atmosphere">NATURE</button>
           <button class="cat-pill" data-cat="Character & Style">CHARACTER</button>
@@ -412,6 +456,14 @@
             aria-label="Search idioms and phrase upgrades"
           />
         </div>
+      </div>
+
+      <div class="filter-pills" id="idiomCategoryPills">
+        <button class="cat-pill active" data-icat="All">ALL (16)</button>
+        <button class="cat-pill" data-icat="Emotion & Mind">EMOTION</button>
+        <button class="cat-pill" data-icat="Nature & Atmosphere">NATURE</button>
+        <button class="cat-pill" data-icat="Character & Style">CHARACTER</button>
+        <button class="cat-pill" data-icat="Time & Society">TIME</button>
       </div>
 
       <div id="idiomsGrid" class="vocab-grid" style="margin-bottom: 34px;"></div>
@@ -576,6 +628,16 @@
         </div>
       </div>
     </section>
+    <section id="page-profile" class="page" aria-labelledby="profile-heading">
+      <div class="page-top-banner">
+        <div>
+          <span class="tag-pill bg-lilac">MY PROFILE</span>
+          <h1 id="profile-heading" class="page-headline">PROGRESS DASHBOARD</h1>
+        </div>
+      </div>
+      <div id="profileRoot"></div>
+      <input type="file" id="avatarInput" class="visually-hidden-file" accept="image/*" />
+    </section>
   </main>
 
   <!-- ==================== FOOTER ==================== -->
@@ -644,6 +706,7 @@
   <!-- Toast -->
   <div id="toast" class="brutal-toast" role="status" aria-live="polite"></div>
 
-  <script src="script.js?v=8"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="script.js?v=16"></script>
 </body>
 </html>

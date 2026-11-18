@@ -19,6 +19,8 @@ const ICONS = {
   cross: `<svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>`
 };
 
+
+
 // 0. Random Quotes (Loaded on Open)
 const QUOTES_DATA = [
   { text: "The limits of my language mean the limits of my world.", author: "Wittgenstein" },
@@ -1021,6 +1023,1014 @@ const VOCAB_DATA = [
     basicAlt: "The most classic example",
     origin: "Medieval Latin 'quinta essentia' (fifth essence).",
     example: "Rainy coffee shop reading is the quintessential autumn vibe."
+  },
+  {
+    "id": "ubiquitous",
+    "word": "Ubiquitous",
+    "ipa": "/juːˈbɪk.wɪ.təs/",
+    "pos": "ADJECTIVE",
+    "category": "Time & Society",
+    "badgeColor": "bg-lilac",
+    "definition": "Present or found everywhere.",
+    "basicAlt": "Found everywhere",
+    "origin": "Latin 'ubique' (everywhere).",
+    "example": "Smartphones have become ubiquitous on campus."
+  },
+  {
+    "id": "candid",
+    "word": "Candid",
+    "ipa": "/ˈkæn.dɪd/",
+    "pos": "ADJECTIVE",
+    "category": "Character & Style",
+    "badgeColor": "bg-sky",
+    "definition": "Honest and open about what you really think.",
+    "basicAlt": "Honest and direct",
+    "origin": "Latin 'candidus' (white, sincere).",
+    "example": "She gave a candid answer about her weak points in the interview."
+  },
+  {
+    "id": "tenacious",
+    "word": "Tenacious",
+    "ipa": "/təˈneɪ.ʃəs/",
+    "pos": "ADJECTIVE",
+    "category": "Character & Style",
+    "badgeColor": "bg-sky",
+    "definition": "Holding firmly to a goal and refusing to give up.",
+    "basicAlt": "Never gives up",
+    "origin": "Latin 'tenax' (holding fast).",
+    "example": "Her tenacious study habits helped her pass the exam."
+  },
+  {
+    "id": "melancholy",
+    "word": "Melancholy",
+    "ipa": "/ˈmel.ən.kɒl.i/",
+    "pos": "NOUN",
+    "category": "Emotion & Mind",
+    "badgeColor": "bg-yellow",
+    "definition": "A deep, gentle sadness, often without a clear cause.",
+    "basicAlt": "Quiet sadness",
+    "origin": "Greek 'melancholia' (black bile).",
+    "example": "A melancholy mood settled over the campus after the holidays."
+  },
+  {
+    "id": "gregarious",
+    "word": "Gregarious",
+    "ipa": "/ɡrɪˈɡeə.ri.əs/",
+    "pos": "ADJECTIVE",
+    "category": "Character & Style",
+    "badgeColor": "bg-sky",
+    "definition": "Friendly and enjoying the company of other people.",
+    "basicAlt": "Very sociable",
+    "origin": "Latin 'gregarius' (of the herd).",
+    "example": "The gregarious host introduced everyone in the room."
+  },
+  {
+    "id": "pragmatic",
+    "word": "Pragmatic",
+    "ipa": "/præɡˈmæt.ɪk/",
+    "pos": "ADJECTIVE",
+    "category": "Character & Style",
+    "badgeColor": "bg-sky",
+    "definition": "Dealing with problems in a practical, realistic way.",
+    "basicAlt": "Practical and realistic",
+    "origin": "Greek 'pragmatikos' (relating to action).",
+    "example": "Her pragmatic plan saved the team a lot of time."
+  },
+  {
+    "id": "ambivalent",
+    "word": "Ambivalent",
+    "ipa": "/æmˈbɪv.ə.lənt/",
+    "pos": "ADJECTIVE",
+    "category": "Emotion & Mind",
+    "badgeColor": "bg-yellow",
+    "definition": "Having mixed or conflicting feelings about something.",
+    "basicAlt": "Not sure how I feel",
+    "origin": "Latin 'ambo' (both) and 'valere' (to be strong).",
+    "example": "I feel ambivalent about moving to a new city."
+  },
+  {
+    "id": "resplendent",
+    "word": "Resplendent",
+    "ipa": "/rɪˈsplen.dənt/",
+    "pos": "ADJECTIVE",
+    "category": "Nature & Atmosphere",
+    "badgeColor": "bg-mint",
+    "definition": "Shining brightly and looking very beautiful.",
+    "basicAlt": "Very bright and beautiful",
+    "origin": "Latin 'resplendere' (to shine brightly).",
+    "example": "The stage looked resplendent under the golden lights."
+  },
+  {
+    "id": "perseverance",
+    "word": "Perseverance",
+    "ipa": "/ˌpɜː.sɪˈvɪə.rəns/",
+    "pos": "NOUN",
+    "category": "Character & Style",
+    "badgeColor": "bg-sky",
+    "definition": "Continued effort despite difficulties.",
+    "basicAlt": "Not giving up",
+    "origin": "Latin 'perseverare' (to persist).",
+    "example": "Her perseverance paid off after months of practice."
+  },
+  {
+    "id": "procrastinate",
+    "word": "Procrastinate",
+    "ipa": "/prəˈkræs.tɪ.neɪt/",
+    "pos": "VERB",
+    "category": "Time & Society",
+    "badgeColor": "bg-lilac",
+    "definition": "To delay doing something you should do now.",
+    "basicAlt": "Put things off",
+    "origin": "Latin 'procrastinare' (to put off until tomorrow).",
+    "example": "I tend to procrastinate when an assignment feels too big."
+  },
+  {
+    "id": "punctual",
+    "word": "Punctual",
+    "ipa": "/ˈpʌŋk.tʃu.əl/",
+    "pos": "ADJECTIVE",
+    "category": "Time & Society",
+    "badgeColor": "bg-lilac",
+    "definition": "Arriving or doing something exactly on time.",
+    "basicAlt": "Always on time",
+    "origin": "Latin 'punctualis' (exact, to the point).",
+    "example": "Our tutor is always punctual, so we start on time."
+  },
+  {
+    "id": "mundane",
+    "word": "Mundane",
+    "ipa": "/mʌnˈdeɪn/",
+    "pos": "ADJECTIVE",
+    "category": "Time & Society",
+    "badgeColor": "bg-lilac",
+    "definition": "Ordinary and not interesting.",
+    "basicAlt": "Boring and ordinary",
+    "origin": "Latin 'mundanus' (of the world).",
+    "example": "Even mundane chores feel better with a good playlist."
+  },
+  {
+    "id": "vivacious",
+    "word": "Vivacious",
+    "ipa": "/vɪˈveɪ.ʃəs/",
+    "pos": "ADJECTIVE",
+    "category": "Character & Style",
+    "badgeColor": "bg-sky",
+    "definition": "Full of energy, lively, and cheerful.",
+    "basicAlt": "Very lively",
+    "origin": "Latin 'vivax' (lively).",
+    "example": "The vivacious presenter got the whole room laughing."
+  },
+  {
+    "id": "lucid",
+    "word": "Lucid",
+    "ipa": "/ˈluː.sɪd/",
+    "pos": "ADJECTIVE",
+    "category": "Character & Style",
+    "badgeColor": "bg-sky",
+    "definition": "Expressed clearly and easy to understand.",
+    "basicAlt": "Clear and easy to understand",
+    "origin": "Latin 'lucidus' (bright, clear).",
+    "example": "Her lucid explanation made the topic easy to follow."
+  },
+  {
+    "id": "apprehensive",
+    "word": "Apprehensive",
+    "ipa": "/ˌæp.rɪˈhen.sɪv/",
+    "pos": "ADJECTIVE",
+    "category": "Emotion & Mind",
+    "badgeColor": "bg-yellow",
+    "definition": "Anxious or worried about something that may happen.",
+    "basicAlt": "Worried about the future",
+    "origin": "Latin 'apprehendere' (to seize, to grasp).",
+    "example": "She felt apprehensive before her first presentation."
+  },
+  {
+    "id": "nonchalant",
+    "word": "Nonchalant",
+    "ipa": "/ˈnɒn.ʃə.lɒnt/",
+    "pos": "ADJECTIVE",
+    "category": "Emotion & Mind",
+    "badgeColor": "bg-yellow",
+    "definition": "Calm and relaxed, showing no worry or interest.",
+    "basicAlt": "Relaxed and unbothered",
+    "origin": "French 'nonchalant' (not concerned).",
+    "example": "He stayed nonchalant even when the deadline moved."
+  },
+  {
+    "id": "exhilarated",
+    "word": "Exhilarated",
+    "ipa": "/ɪɡˈzɪl.ə.reɪ.tɪd/",
+    "pos": "ADJECTIVE",
+    "category": "Emotion & Mind",
+    "badgeColor": "bg-yellow",
+    "definition": "Feeling very excited and full of energy.",
+    "basicAlt": "Very excited",
+    "origin": "Latin 'exhilarare' (to cheer up).",
+    "example": "We felt exhilarated after the final result was announced."
+  },
+  {
+    "id": "resentful",
+    "word": "Resentful",
+    "ipa": "/rɪˈzent.fəl/",
+    "pos": "ADJECTIVE",
+    "category": "Emotion & Mind",
+    "badgeColor": "bg-yellow",
+    "definition": "Feeling bitter about something you consider unfair.",
+    "basicAlt": "Bitter about something unfair",
+    "origin": "Old French 'ressentir' (to feel strongly).",
+    "example": "She was resentful about being left out of the project."
+  },
+  {
+    "id": "apathetic",
+    "word": "Apathetic",
+    "ipa": "/ˌæp.əˈθet.ɪk/",
+    "pos": "ADJECTIVE",
+    "category": "Emotion & Mind",
+    "badgeColor": "bg-yellow",
+    "definition": "Showing little or no interest or emotion.",
+    "basicAlt": "Not interested at all",
+    "origin": "Greek 'apatheia' (without feeling).",
+    "example": "Many students were apathetic about the optional workshop."
+  },
+  {
+    "id": "jubilant",
+    "word": "Jubilant",
+    "ipa": "/ˈdʒuː.bɪ.lənt/",
+    "pos": "ADJECTIVE",
+    "category": "Emotion & Mind",
+    "badgeColor": "bg-yellow",
+    "definition": "Feeling great joy, especially after a success.",
+    "basicAlt": "Very happy after winning",
+    "origin": "Latin 'jubilare' (to shout for joy).",
+    "example": "The team was jubilant after winning the competition."
+  },
+  {
+    "id": "reluctant",
+    "word": "Reluctant",
+    "ipa": "/rɪˈlʌk.tənt/",
+    "pos": "ADJECTIVE",
+    "category": "Emotion & Mind",
+    "badgeColor": "bg-yellow",
+    "definition": "Unwilling to do something.",
+    "basicAlt": "Not really willing",
+    "origin": "Latin 'reluctari' (to struggle against).",
+    "example": "He was reluctant to share his draft before it was finished."
+  },
+  {
+    "id": "wary",
+    "word": "Wary",
+    "ipa": "/ˈweə.ri/",
+    "pos": "ADJECTIVE",
+    "category": "Emotion & Mind",
+    "badgeColor": "bg-yellow",
+    "definition": "Careful because you expect problems or danger.",
+    "basicAlt": "Careful and suspicious",
+    "origin": "Old English 'wær' (aware, cautious).",
+    "example": "I'm wary of offers that sound too good to be true."
+  },
+  {
+    "id": "bewildered",
+    "word": "Bewildered",
+    "ipa": "/bɪˈwɪl.dəd/",
+    "pos": "ADJECTIVE",
+    "category": "Emotion & Mind",
+    "badgeColor": "bg-yellow",
+    "definition": "Confused and unable to understand something.",
+    "basicAlt": "Totally confused",
+    "origin": "Based on 'wilder' (to lead astray).",
+    "example": "The bewildered tourist checked the map again."
+  },
+  {
+    "id": "indignant",
+    "word": "Indignant",
+    "ipa": "/ɪnˈdɪɡ.nənt/",
+    "pos": "ADJECTIVE",
+    "category": "Emotion & Mind",
+    "badgeColor": "bg-yellow",
+    "definition": "Angry because something is unfair or wrong.",
+    "basicAlt": "Angry about something unfair",
+    "origin": "Latin 'indignari' (to regard as unworthy).",
+    "example": "The customer was indignant about the wrong charge."
+  },
+  {
+    "id": "euphoric",
+    "word": "Euphoric",
+    "ipa": "/juːˈfɒr.ɪk/",
+    "pos": "ADJECTIVE",
+    "category": "Emotion & Mind",
+    "badgeColor": "bg-yellow",
+    "definition": "Feeling intense happiness.",
+    "basicAlt": "Extremely happy",
+    "origin": "Greek 'euphoria' (well-bearing).",
+    "example": "The crowd was euphoric when the band returned."
+  },
+  {
+    "id": "sentimental",
+    "word": "Sentimental",
+    "ipa": "/ˌsen.tɪˈmen.təl/",
+    "pos": "ADJECTIVE",
+    "category": "Emotion & Mind",
+    "badgeColor": "bg-yellow",
+    "definition": "Easily moved by feelings, often about memories.",
+    "basicAlt": "Emotional about memories",
+    "origin": "Latin 'sentire' (to feel).",
+    "example": "He kept a sentimental collection of old letters."
+  },
+  {
+    "id": "skeptical",
+    "word": "Skeptical",
+    "ipa": "/ˈskep.tɪ.kəl/",
+    "pos": "ADJECTIVE",
+    "category": "Emotion & Mind",
+    "badgeColor": "bg-yellow",
+    "definition": "Doubtful about whether something is true.",
+    "basicAlt": "Doubtful",
+    "origin": "Greek 'skeptikos' (thoughtful, inquiring).",
+    "example": "I'm skeptical about the claim until I see the data."
+  },
+  {
+    "id": "trepidation",
+    "word": "Trepidation",
+    "ipa": "/ˌtrep.ɪˈdeɪ.ʃən/",
+    "pos": "NOUN",
+    "category": "Emotion & Mind",
+    "badgeColor": "bg-yellow",
+    "definition": "A feeling of fear or nervousness about what may happen.",
+    "basicAlt": "Nervousness",
+    "origin": "Latin 'trepidatio' (alarm, agitation).",
+    "example": "She walked onto the stage with trepidation."
+  },
+  {
+    "id": "ecstatic",
+    "word": "Ecstatic",
+    "ipa": "/ɪkˈstæt.ɪk/",
+    "pos": "ADJECTIVE",
+    "category": "Emotion & Mind",
+    "badgeColor": "bg-yellow",
+    "definition": "Extremely happy and excited.",
+    "basicAlt": "Super happy",
+    "origin": "Greek 'ekstatikos' (ecstasy).",
+    "example": "The fans were ecstatic when the band returned."
+  },
+  {
+    "id": "forlorn",
+    "word": "Forlorn",
+    "ipa": "/fəˈlɔːn/",
+    "pos": "ADJECTIVE",
+    "category": "Emotion & Mind",
+    "badgeColor": "bg-yellow",
+    "definition": "Lonely and sad, especially when left behind.",
+    "basicAlt": "Lonely and sad",
+    "origin": "Old English 'forlosen' (lost, abandoned).",
+    "example": "The forlorn puppy waited by the gate."
+  },
+  {
+    "id": "pensive",
+    "word": "Pensive",
+    "ipa": "/ˈpen.sɪv/",
+    "pos": "ADJECTIVE",
+    "category": "Emotion & Mind",
+    "badgeColor": "bg-yellow",
+    "definition": "Thinking quietly and deeply.",
+    "basicAlt": "Lost in thought",
+    "origin": "Old French 'pensif' (thinking).",
+    "example": "She grew pensive while looking at the old photos."
+  },
+  {
+    "id": "sheepish",
+    "word": "Sheepish",
+    "ipa": "/ˈʃiː.pɪʃ/",
+    "pos": "ADJECTIVE",
+    "category": "Emotion & Mind",
+    "badgeColor": "bg-yellow",
+    "definition": "Embarrassed about a small mistake.",
+    "basicAlt": "Embarrassed",
+    "origin": "From 'sheep' (timid, meek).",
+    "example": "He gave a sheepish smile after tripping on stage."
+  },
+  {
+    "id": "irritated",
+    "word": "Irritated",
+    "ipa": "/ˈɪr.ɪ.teɪ.tɪd/",
+    "pos": "ADJECTIVE",
+    "category": "Emotion & Mind",
+    "badgeColor": "bg-yellow",
+    "definition": "Annoyed by something small or repeated.",
+    "basicAlt": "Annoyed",
+    "origin": "Latin 'irritare' (to provoke).",
+    "example": "She was irritated by the constant noise next door."
+  },
+  {
+    "id": "buoyant",
+    "word": "Buoyant",
+    "ipa": "/ˈbɔɪ.ənt/",
+    "pos": "ADJECTIVE",
+    "category": "Emotion & Mind",
+    "badgeColor": "bg-yellow",
+    "definition": "Cheerful and full of hope, or able to float.",
+    "basicAlt": "Cheerful and light",
+    "origin": "Old French 'buoier' (to float).",
+    "example": "The buoyant mood lifted everyone's spirits."
+  },
+  {
+    "id": "benevolent",
+    "word": "Benevolent",
+    "ipa": "/bəˈnev.ə.lənt/",
+    "pos": "ADJECTIVE",
+    "category": "Character & Style",
+    "badgeColor": "bg-sky",
+    "definition": "Kind and wanting to help others.",
+    "basicAlt": "Very kind",
+    "origin": "Latin 'bene' (well) and 'volens' (wishing).",
+    "example": "The benevolent teacher stayed late to help us practice."
+  },
+  {
+    "id": "empathetic",
+    "word": "Empathetic",
+    "ipa": "/ˌem.pəˈθet.ɪk/",
+    "pos": "ADJECTIVE",
+    "category": "Character & Style",
+    "badgeColor": "bg-sky",
+    "definition": "Able to understand and share another person's feelings.",
+    "basicAlt": "Understanding others' feelings",
+    "origin": "Greek 'empatheia' (feeling into).",
+    "example": "An empathetic listener makes people feel safe to share."
+  },
+  {
+    "id": "compassionate",
+    "word": "Compassionate",
+    "ipa": "/kəmˈpæʃ.ən.ət/",
+    "pos": "ADJECTIVE",
+    "category": "Character & Style",
+    "badgeColor": "bg-sky",
+    "definition": "Feeling deep sympathy and wanting to ease someone's pain.",
+    "basicAlt": "Caring about others' pain",
+    "origin": "Latin 'compati' (to suffer with).",
+    "example": "The compassionate nurse sat with the worried family."
+  },
+  {
+    "id": "diligent",
+    "word": "Diligent",
+    "ipa": "/ˈdɪl.ɪ.dʒənt/",
+    "pos": "ADJECTIVE",
+    "category": "Character & Style",
+    "badgeColor": "bg-sky",
+    "definition": "Working hard and carefully, with steady effort.",
+    "basicAlt": "Hard-working",
+    "origin": "Latin 'diligere' (to value, to love).",
+    "example": "A diligent student reviews the notes every week."
+  },
+  {
+    "id": "humble",
+    "word": "Humble",
+    "ipa": "/ˈhʌm.bəl/",
+    "pos": "ADJECTIVE",
+    "category": "Character & Style",
+    "badgeColor": "bg-sky",
+    "definition": "Modest, not proud of your achievements.",
+    "basicAlt": "Modest",
+    "origin": "Latin 'humilis' (low, from the ground).",
+    "example": "Even after winning, he stayed humble."
+  },
+  {
+    "id": "meticulous",
+    "word": "Meticulous",
+    "ipa": "/məˈtɪk.jʊ.ləs/",
+    "pos": "ADJECTIVE",
+    "category": "Character & Style",
+    "badgeColor": "bg-sky",
+    "definition": "Very careful and paying attention to every detail.",
+    "basicAlt": "Very careful",
+    "origin": "Latin 'meticulosus' (fearful, careful).",
+    "example": "She kept meticulous notes for every experiment."
+  },
+  {
+    "id": "eccentric",
+    "word": "Eccentric",
+    "ipa": "/ɪkˈsen.trɪk/",
+    "pos": "ADJECTIVE",
+    "category": "Character & Style",
+    "badgeColor": "bg-sky",
+    "definition": "Unusual or strange in behavior, in a way that is interesting.",
+    "basicAlt": "Unusual and quirky",
+    "origin": "Greek 'ekkentros' (out of center).",
+    "example": "The professor had an eccentric way of teaching."
+  },
+  {
+    "id": "articulate",
+    "word": "Articulate",
+    "ipa": "/ɑːˈtɪk.jʊ.lət/",
+    "pos": "ADJECTIVE",
+    "category": "Character & Style",
+    "badgeColor": "bg-sky",
+    "definition": "Able to express ideas clearly and well.",
+    "basicAlt": "Clear when speaking",
+    "origin": "Latin 'articulare' (to divide into joints).",
+    "example": "The articulate speaker answered every question with ease."
+  },
+  {
+    "id": "charismatic",
+    "word": "Charismatic",
+    "ipa": "/ˌkær.ɪzˈmæt.ɪk/",
+    "pos": "ADJECTIVE",
+    "category": "Character & Style",
+    "badgeColor": "bg-sky",
+    "definition": "Having a strong, attractive personality that draws people in.",
+    "basicAlt": "Very charming",
+    "origin": "Greek 'charisma' (divine gift, favor).",
+    "example": "The charismatic host kept the whole audience engaged."
+  },
+  {
+    "id": "assertive",
+    "word": "Assertive",
+    "ipa": "/əˈsɜː.tɪv/",
+    "pos": "ADJECTIVE",
+    "category": "Character & Style",
+    "badgeColor": "bg-sky",
+    "definition": "Confident in stating your needs and opinions politely.",
+    "basicAlt": "Confident and direct",
+    "origin": "Latin 'asserere' (to claim).",
+    "example": "Being assertive helps you ask for feedback."
+  },
+  {
+    "id": "frugal",
+    "word": "Frugal",
+    "ipa": "/ˈfruː.ɡəl/",
+    "pos": "ADJECTIVE",
+    "category": "Character & Style",
+    "badgeColor": "bg-sky",
+    "definition": "Careful with money and avoiding waste.",
+    "basicAlt": "Careful with money",
+    "origin": "Latin 'frugalis' (useful, economical).",
+    "example": "They lived a frugal life while saving for school."
+  },
+  {
+    "id": "sincere",
+    "word": "Sincere",
+    "ipa": "/sɪnˈsɪər/",
+    "pos": "ADJECTIVE",
+    "category": "Character & Style",
+    "badgeColor": "bg-sky",
+    "definition": "Honest and genuine in what you feel and say.",
+    "basicAlt": "Honest and real",
+    "origin": "Latin 'sincerus' (clean, pure).",
+    "example": "Thank you for your sincere feedback."
+  },
+  {
+    "id": "meek",
+    "word": "Meek",
+    "ipa": "/miːk/",
+    "pos": "ADJECTIVE",
+    "category": "Character & Style",
+    "badgeColor": "bg-sky",
+    "definition": "Quiet and gentle, not likely to argue or push.",
+    "basicAlt": "Quiet and gentle",
+    "origin": "Old Norse 'mjúkr' (soft).",
+    "example": "The meek student rarely spoke up in class."
+  },
+  {
+    "id": "diplomatic",
+    "word": "Diplomatic",
+    "ipa": "/ˌdɪp.ləˈmæt.ɪk/",
+    "pos": "ADJECTIVE",
+    "category": "Character & Style",
+    "badgeColor": "bg-sky",
+    "definition": "Good at handling sensitive situations without causing offense.",
+    "basicAlt": "Tactful",
+    "origin": "Greek 'diplōma' (a folded document).",
+    "example": "She was diplomatic when correcting her teammate."
+  },
+  {
+    "id": "ambitious",
+    "word": "Ambitious",
+    "ipa": "/æmˈbɪʃ.əs/",
+    "pos": "ADJECTIVE",
+    "category": "Character & Style",
+    "badgeColor": "bg-sky",
+    "definition": "Having a strong desire to succeed and achieve big goals.",
+    "basicAlt": "Wanting to achieve a lot",
+    "origin": "Latin 'ambitio' (going around to seek favor).",
+    "example": "He set ambitious goals for the semester."
+  },
+  {
+    "id": "gullible",
+    "word": "Gullible",
+    "ipa": "/ˈɡʌl.ə.bəl/",
+    "pos": "ADJECTIVE",
+    "category": "Character & Style",
+    "badgeColor": "bg-sky",
+    "definition": "Easily tricked or persuaded to believe something.",
+    "basicAlt": "Easily fooled",
+    "origin": "From 'gull' (to deceive).",
+    "example": "Don't be gullible about offers that promise instant results."
+  },
+  {
+    "id": "pessimistic",
+    "word": "Pessimistic",
+    "ipa": "/ˌpes.ɪˈmɪs.tɪk/",
+    "pos": "ADJECTIVE",
+    "category": "Character & Style",
+    "badgeColor": "bg-sky",
+    "definition": "Expecting the worst to happen.",
+    "basicAlt": "Expecting bad results",
+    "origin": "Latin 'pessimus' (worst).",
+    "example": "He was pessimistic about passing the exam."
+  },
+  {
+    "id": "optimistic",
+    "word": "Optimistic",
+    "ipa": "/ˌɒp.tɪˈmɪs.tɪk/",
+    "pos": "ADJECTIVE",
+    "category": "Character & Style",
+    "badgeColor": "bg-sky",
+    "definition": "Expecting good things to happen.",
+    "basicAlt": "Expecting good results",
+    "origin": "Latin 'optimus' (best).",
+    "example": "She stayed optimistic despite the setbacks."
+  },
+  {
+    "id": "resourceful",
+    "word": "Resourceful",
+    "ipa": "/rɪˈzɔːs.fəl/",
+    "pos": "ADJECTIVE",
+    "category": "Character & Style",
+    "badgeColor": "bg-sky",
+    "definition": "Good at finding solutions when resources are limited.",
+    "basicAlt": "Good at solving problems",
+    "origin": "From 'resource' (French 'ressource').",
+    "example": "A resourceful team finds a way even with limited tools."
+  },
+  {
+    "id": "chronic",
+    "word": "Chronic",
+    "ipa": "/ˈkrɒn.ɪk/",
+    "pos": "ADJECTIVE",
+    "category": "Time & Society",
+    "badgeColor": "bg-lilac",
+    "definition": "Lasting for a long time or happening again and again.",
+    "basicAlt": "Long-lasting",
+    "origin": "Greek 'khronos' (time).",
+    "example": "Chronic lateness can hurt your reputation at work."
+  },
+  {
+    "id": "impromptu",
+    "word": "Impromptu",
+    "ipa": "/ɪmˈprɒmp.tjuː/",
+    "pos": "ADJECTIVE",
+    "category": "Time & Society",
+    "badgeColor": "bg-lilac",
+    "definition": "Done without planning, on the spur of the moment.",
+    "basicAlt": "Unplanned",
+    "origin": "Latin 'in promptu' (in readiness).",
+    "example": "We gave an impromptu speech when the speaker was late."
+  },
+  {
+    "id": "hasty",
+    "word": "Hasty",
+    "ipa": "/ˈheɪ.sti/",
+    "pos": "ADJECTIVE",
+    "category": "Time & Society",
+    "badgeColor": "bg-lilac",
+    "definition": "Done too quickly, without enough care.",
+    "basicAlt": "Too quick",
+    "origin": "Middle English 'haste' (speed).",
+    "example": "A hasty decision can lead to avoidable mistakes."
+  },
+  {
+    "id": "sequential",
+    "word": "Sequential",
+    "ipa": "/sɪˈkwen.ʃəl/",
+    "pos": "ADJECTIVE",
+    "category": "Time & Society",
+    "badgeColor": "bg-lilac",
+    "definition": "Following one after another in a logical order.",
+    "basicAlt": "In order, one by one",
+    "origin": "Latin 'sequi' (to follow).",
+    "example": "Follow the sequential steps in the manual."
+  },
+  {
+    "id": "timely",
+    "word": "Timely",
+    "ipa": "/ˈtaɪm.li/",
+    "pos": "ADJECTIVE",
+    "category": "Time & Society",
+    "badgeColor": "bg-lilac",
+    "definition": "Happening at the right moment.",
+    "basicAlt": "On time",
+    "origin": "Old English 'tīma' (time).",
+    "example": "Thank you for the timely reply."
+  },
+  {
+    "id": "retrospective",
+    "word": "Retrospective",
+    "ipa": "/ˌret.rəʊˈspek.tɪv/",
+    "pos": "ADJECTIVE",
+    "category": "Time & Society",
+    "badgeColor": "bg-lilac",
+    "definition": "Looking back at past events.",
+    "basicAlt": "Looking back",
+    "origin": "Latin 'retro' (backward) and 'specere' (to look).",
+    "example": "The retrospective chapter reviews the company's history."
+  },
+  {
+    "id": "prospect",
+    "word": "Prospect",
+    "ipa": "/ˈprɒs.pekt/",
+    "pos": "NOUN",
+    "category": "Time & Society",
+    "badgeColor": "bg-lilac",
+    "definition": "A possibility that something will happen in the future.",
+    "basicAlt": "A possible future event",
+    "origin": "Latin 'prospectus' (a view forward).",
+    "example": "The prospect of a new job excited him."
+  },
+  {
+    "id": "transient",
+    "word": "Transient",
+    "ipa": "/ˈtræn.zi.ənt/",
+    "pos": "ADJECTIVE",
+    "category": "Time & Society",
+    "badgeColor": "bg-lilac",
+    "definition": "Lasting only for a short time.",
+    "basicAlt": "Short-lived",
+    "origin": "Latin 'transire' (to go across).",
+    "example": "Fame can be transient if it is not built on real skill."
+  },
+  {
+    "id": "eventual",
+    "word": "Eventual",
+    "ipa": "/ɪˈven.tʃu.əl/",
+    "pos": "ADJECTIVE",
+    "category": "Time & Society",
+    "badgeColor": "bg-lilac",
+    "definition": "Happening in the end, after some time.",
+    "basicAlt": "Final, in the end",
+    "origin": "From 'event' (Latin 'eventus', outcome).",
+    "example": "Their eventual success came after years of practice."
+  },
+  {
+    "id": "chronology",
+    "word": "Chronology",
+    "ipa": "/krəˈnɒl.ə.dʒi/",
+    "pos": "NOUN",
+    "category": "Time & Society",
+    "badgeColor": "bg-lilac",
+    "definition": "The order in which events happened.",
+    "basicAlt": "Order of events",
+    "origin": "Greek 'khronos' (time) and 'logos' (study).",
+    "example": "Put the events in chronology before you start writing."
+  },
+  {
+    "id": "anachronism",
+    "word": "Anachronism",
+    "ipa": "/əˈnæk.rə.nɪ.zəm/",
+    "pos": "NOUN",
+    "category": "Time & Society",
+    "badgeColor": "bg-lilac",
+    "definition": "Something placed in the wrong time period.",
+    "basicAlt": "Something from the wrong era",
+    "origin": "Greek 'ana-' (against) and 'khronos' (time).",
+    "example": "A smartphone in a medieval story is an anachronism."
+  },
+  {
+    "id": "fleeting",
+    "word": "Fleeting",
+    "ipa": "/ˈfliː.tɪŋ/",
+    "pos": "ADJECTIVE",
+    "category": "Time & Society",
+    "badgeColor": "bg-lilac",
+    "definition": "Passing very quickly.",
+    "basicAlt": "Very brief",
+    "origin": "Old English 'flēotan' (to float).",
+    "example": "A fleeting moment of silence filled the room."
+  },
+  {
+    "id": "contemporary",
+    "word": "Contemporary",
+    "ipa": "/kənˈtem.pər.ər.i/",
+    "pos": "ADJECTIVE",
+    "category": "Time & Society",
+    "badgeColor": "bg-lilac",
+    "definition": "Existing or happening at the same time as now.",
+    "basicAlt": "Modern, current",
+    "origin": "Latin 'contemporarius' (of the same time).",
+    "example": "The class studies contemporary English writers."
+  },
+  {
+    "id": "hiatus",
+    "word": "Hiatus",
+    "ipa": "/haɪˈeɪ.təs/",
+    "pos": "NOUN",
+    "category": "Time & Society",
+    "badgeColor": "bg-lilac",
+    "definition": "A pause or break in an activity.",
+    "basicAlt": "A break",
+    "origin": "Latin 'hiatus' (gap, opening).",
+    "example": "After a short hiatus, the podcast returned with new episodes."
+  },
+  {
+    "id": "spontaneous",
+    "word": "Spontaneous",
+    "ipa": "/spɒnˈteɪ.ni.əs/",
+    "pos": "ADJECTIVE",
+    "category": "Time & Society",
+    "badgeColor": "bg-lilac",
+    "definition": "Done naturally, without planning.",
+    "basicAlt": "Unplanned and natural",
+    "origin": "Latin 'sponte' (of one's own accord).",
+    "example": "We made a spontaneous trip to the beach."
+  },
+  {
+    "id": "belated",
+    "word": "Belated",
+    "ipa": "/bɪˈleɪ.tɪd/",
+    "pos": "ADJECTIVE",
+    "category": "Time & Society",
+    "badgeColor": "bg-lilac",
+    "definition": "Happening later than expected.",
+    "basicAlt": "Late",
+    "origin": "From 'be-' and 'late'.",
+    "example": "A belated thank-you note still means a lot."
+  },
+  {
+    "id": "verdant",
+    "word": "Verdant",
+    "ipa": "/ˈvɜː.dənt/",
+    "pos": "ADJECTIVE",
+    "category": "Nature & Atmosphere",
+    "badgeColor": "bg-mint",
+    "definition": "Covered in green grass or plants.",
+    "basicAlt": "Very green",
+    "origin": "Old French 'verd' (green).",
+    "example": "We walked through the verdant hills near campus."
+  },
+  {
+    "id": "tranquil",
+    "word": "Tranquil",
+    "ipa": "/ˈtræŋ.kwɪl/",
+    "pos": "ADJECTIVE",
+    "category": "Nature & Atmosphere",
+    "badgeColor": "bg-mint",
+    "definition": "Calm, quiet, and peaceful.",
+    "basicAlt": "Calm and quiet",
+    "origin": "Latin 'tranquillus' (calm).",
+    "example": "The lake looked tranquil at dawn."
+  },
+  {
+    "id": "arid",
+    "word": "Arid",
+    "ipa": "/ˈær.ɪd/",
+    "pos": "ADJECTIVE",
+    "category": "Nature & Atmosphere",
+    "badgeColor": "bg-mint",
+    "definition": "Very dry, with little rain.",
+    "basicAlt": "Very dry",
+    "origin": "Latin 'aridus' (dry).",
+    "example": "The arid desert has very few plants."
+  },
+  {
+    "id": "hazy",
+    "word": "Hazy",
+    "ipa": "/ˈheɪ.zi/",
+    "pos": "ADJECTIVE",
+    "category": "Nature & Atmosphere",
+    "badgeColor": "bg-mint",
+    "definition": "Not clear, partly covered by mist or fog.",
+    "basicAlt": "Foggy and unclear",
+    "origin": "Related to 'haze' (fog or mist).",
+    "example": "The hazy skyline made the city look dreamy."
+  },
+  {
+    "id": "torrential",
+    "word": "Torrential",
+    "ipa": "/təˈren.ʃəl/",
+    "pos": "ADJECTIVE",
+    "category": "Nature & Atmosphere",
+    "badgeColor": "bg-mint",
+    "definition": "Falling very heavily, like a flood.",
+    "basicAlt": "Very heavy",
+    "origin": "Latin 'torrens' (rushing, burning).",
+    "example": "Torrential rain flooded the street in minutes."
+  },
+  {
+    "id": "crisp",
+    "word": "Crisp",
+    "ipa": "/krɪsp/",
+    "pos": "ADJECTIVE",
+    "category": "Nature & Atmosphere",
+    "badgeColor": "bg-mint",
+    "definition": "Cool, fresh, and clear, especially the air.",
+    "basicAlt": "Fresh and cool",
+    "origin": "Old English 'crisp' (curled).",
+    "example": "The crisp morning air made the run refreshing."
+  },
+  {
+    "id": "scenic",
+    "word": "Scenic",
+    "ipa": "/ˈsiː.nɪk/",
+    "pos": "ADJECTIVE",
+    "category": "Nature & Atmosphere",
+    "badgeColor": "bg-mint",
+    "definition": "Having beautiful natural views.",
+    "basicAlt": "Beautiful to look at",
+    "origin": "Greek 'skēnē' (stage, scene).",
+    "example": "We took the scenic route along the coast."
+  },
+  {
+    "id": "barren",
+    "word": "Barren",
+    "ipa": "/ˈbær.ən/",
+    "pos": "ADJECTIVE",
+    "category": "Nature & Atmosphere",
+    "badgeColor": "bg-mint",
+    "definition": "Empty, with no plants growing.",
+    "basicAlt": "No plants, empty",
+    "origin": "Old English 'bær' (barren).",
+    "example": "The barren land was unsuitable for farming."
+  },
+  {
+    "id": "vast",
+    "word": "Vast",
+    "ipa": "/vɑːst/",
+    "pos": "ADJECTIVE",
+    "category": "Nature & Atmosphere",
+    "badgeColor": "bg-mint",
+    "definition": "Extremely large in area or amount.",
+    "basicAlt": "Very large",
+    "origin": "Latin 'vastus' (empty, huge).",
+    "example": "The vast ocean stretched to the horizon."
+  },
+  {
+    "id": "dense",
+    "word": "Dense",
+    "ipa": "/dens/",
+    "pos": "ADJECTIVE",
+    "category": "Nature & Atmosphere",
+    "badgeColor": "bg-mint",
+    "definition": "Thick and tightly packed, hard to see through.",
+    "basicAlt": "Thick and packed",
+    "origin": "Latin 'densus' (thick).",
+    "example": "We walked through dense fog on the mountain."
+  },
+  {
+    "id": "humid",
+    "word": "Humid",
+    "ipa": "/ˈhjuː.mɪd/",
+    "pos": "ADJECTIVE",
+    "category": "Nature & Atmosphere",
+    "badgeColor": "bg-mint",
+    "definition": "Warm and wet, with lots of moisture in the air.",
+    "basicAlt": "Warm and wet",
+    "origin": "Latin 'humidus' (moist).",
+    "example": "The humid afternoon made everyone sleepy."
+  },
+  {
+    "id": "celestial",
+    "word": "Celestial",
+    "ipa": "/səˈles.tʃəl/",
+    "pos": "ADJECTIVE",
+    "category": "Nature & Atmosphere",
+    "badgeColor": "bg-mint",
+    "definition": "Relating to the sky or the heavens.",
+    "basicAlt": "Related to the sky",
+    "origin": "Latin 'caelestis' (of the sky).",
+    "example": "The celestial view from the hilltop was breathtaking."
+  },
+  {
+    "id": "ethereal",
+    "word": "Ethereal",
+    "ipa": "/ɪˈθɪə.ri.əl/",
+    "pos": "ADJECTIVE",
+    "category": "Nature & Atmosphere",
+    "badgeColor": "bg-mint",
+    "definition": "Extremely light and delicate, almost heavenly.",
+    "basicAlt": "Light and delicate",
+    "origin": "Greek 'aithēr' (upper air).",
+    "example": "The ethereal mist floated over the lake."
+  },
+  {
+    "id": "rustic",
+    "word": "Rustic",
+    "ipa": "/ˈrʌs.tɪk/",
+    "pos": "ADJECTIVE",
+    "category": "Nature & Atmosphere",
+    "badgeColor": "bg-mint",
+    "definition": "Simple and related to the countryside.",
+    "basicAlt": "Simple and countryside-style",
+    "origin": "Latin 'rusticus' (of the countryside).",
+    "example": "The café has a rustic wooden charm."
+  },
+  {
+    "id": "tropical",
+    "word": "Tropical",
+    "ipa": "/ˈtrɒp.ɪ.kəl/",
+    "pos": "ADJECTIVE",
+    "category": "Nature & Atmosphere",
+    "badgeColor": "bg-mint",
+    "definition": "Relating to the hot, wet areas near the equator.",
+    "basicAlt": "Hot and wet",
+    "origin": "Greek 'tropikos' (of a turn, of the solstice).",
+    "example": "The tropical island has warm weather all year."
   }
 ];
 
@@ -1029,6 +2039,7 @@ const IDIOMS_DATA = [
   {
     idiom: "Bite the bullet",
     tag: "COURAGE",
+    category: "Character & Style",
     color: "bg-coral",
     meaning: "Force yourself to do something tough you've been delaying.",
     example: "I bit the bullet and gave my whole presentation in English."
@@ -1036,6 +2047,7 @@ const IDIOMS_DATA = [
   {
     idiom: "Burn the midnight oil",
     tag: "STUDY",
+    category: "Time & Society",
     color: "bg-yellow",
     meaning: "Study or work late into the night.",
     example: "Group 11 burned the midnight oil to polish the project."
@@ -1043,6 +2055,7 @@ const IDIOMS_DATA = [
   {
     idiom: "Read between the lines",
     tag: "INSIGHT",
+    category: "Emotion & Mind",
     color: "bg-sky",
     meaning: "Understand the hidden meaning behind someone's words.",
     example: "Reading between the lines, her message meant she needed help."
@@ -1050,6 +2063,7 @@ const IDIOMS_DATA = [
   {
     idiom: "Once in a blue moon",
     tag: "RARE",
+    category: "Time & Society",
     color: "bg-lilac",
     meaning: "Something that happens very rarely.",
     example: "He lives abroad now, so we meet once in a blue moon."
@@ -1057,6 +2071,7 @@ const IDIOMS_DATA = [
   {
     idiom: "A penny for your thoughts",
     tag: "CHAT",
+    category: "Emotion & Mind",
     color: "bg-mint",
     meaning: "Friendly way to ask someone what they're thinking about.",
     example: "You've been quiet for ten minutes. A penny for your thoughts?"
@@ -1064,6 +2079,7 @@ const IDIOMS_DATA = [
   {
     idiom: "Cut to the chase",
     tag: "DIRECT",
+    category: "Character & Style",
     color: "bg-peach",
     meaning: "Get straight to the main point without wasting time.",
     example: "We only have five minutes left, so let's cut to the chase."
@@ -1071,6 +2087,7 @@ const IDIOMS_DATA = [
   {
     idiom: "Walking on air",
     tag: "JOY",
+    category: "Emotion & Mind",
     color: "bg-yellow",
     meaning: "Feeling extraordinarily happy after great news.",
     example: "She was walking on air after passing her interview."
@@ -1078,9 +2095,74 @@ const IDIOMS_DATA = [
   {
     idiom: "Every cloud has a silver lining",
     tag: "HOPE",
+    category: "Emotion & Mind",
     color: "bg-mint",
     meaning: "Every tough situation still has a positive side.",
     example: "Missing the bus led me to a great café. Every cloud has a silver lining."
+  },
+  {
+    "idiom": "Break the ice",
+    "tag": "SOCIAL",
+    "color": "bg-sky",
+    "category": "Character & Style",
+    "meaning": "Say or do something to make people feel comfortable at the start of a conversation.",
+    "example": "She told a funny story to break the ice at the workshop."
+  },
+  {
+    "idiom": "Hit the books",
+    "tag": "STUDY",
+    "color": "bg-lilac",
+    "category": "Time & Society",
+    "meaning": "Start studying seriously.",
+    "example": "Finals start next week, so I'm going to hit the books tonight."
+  },
+  {
+    "idiom": "Under the weather",
+    "tag": "HEALTH",
+    "color": "bg-mint",
+    "category": "Emotion & Mind",
+    "meaning": "Feeling slightly ill.",
+    "example": "I'm a bit under the weather, so I'll skip practice today."
+  },
+  {
+    "idiom": "Piece of cake",
+    "tag": "EASY",
+    "color": "bg-yellow",
+    "category": "Character & Style",
+    "meaning": "Something that is very easy to do.",
+    "example": "The quiz was a piece of cake after all that practice."
+  },
+  {
+    "idiom": "Call it a day",
+    "tag": "FINISH",
+    "color": "bg-peach",
+    "category": "Time & Society",
+    "meaning": "Stop working on something for the day.",
+    "example": "We've finished the slides, so let's call it a day."
+  },
+  {
+    "idiom": "Get the hang of it",
+    "tag": "LEARN",
+    "color": "bg-coral",
+    "category": "Character & Style",
+    "meaning": "Learn how to do something well after some practice.",
+    "example": "It took me a week, but I finally got the hang of the app."
+  },
+  {
+    "idiom": "Speak your mind",
+    "tag": "HONEST",
+    "color": "bg-sky",
+    "category": "Character & Style",
+    "meaning": "Say openly what you think, even if others may disagree.",
+    "example": "In the meeting, she wasn't afraid to speak her mind."
+  },
+  {
+    "idiom": "Keep your chin up",
+    "tag": "HOPE",
+    "color": "bg-mint",
+    "category": "Emotion & Mind",
+    "meaning": "Stay positive and cheerful during a difficult time.",
+    "example": "Keep your chin up, the results will come soon."
   }
 ];
 
@@ -1438,97 +2520,478 @@ const QUIZ_DECKS = {
       ],
       answer: "To put it simply: define the issue, pick a compromise, and move forward.",
       detail: "UNIT 14: Uses 'To put it simply' + clear steps."
+    },
+    {
+      "clue": "[UNIT 01] Which question is a friendly way to start getting to know someone?",
+      "options": [
+        "What do you study?",
+        "Why are you so quiet?",
+        "Tell me your bank PIN.",
+        "How much money do you make?"
+      ],
+      "answer": "What do you study?",
+      "detail": "UNIT 01: Open questions about study or work help people share without feeling pressured."
+    },
+    {
+      "clue": "[UNIT 01] Which phrase introduces yourself politely?",
+      "options": [
+        "Hi, I'm Adit. Nice to meet you.",
+        "You're new, right?",
+        "Who sent you here?",
+        "Whatever, I'm Adit."
+      ],
+      "answer": "Hi, I'm Adit. Nice to meet you.",
+      "detail": "UNIT 01: A short name introduction with a greeting is warm and clear."
+    },
+    {
+      "clue": "[UNIT 01] Which line politely ends a first chat?",
+      "options": [
+        "I should get going now. Let's catch up again soon.",
+        "Bye.",
+        "I'm leaving, don't follow me.",
+        "This conversation is boring."
+      ],
+      "answer": "I should get going now. Let's catch up again soon.",
+      "detail": "UNIT 01: A reason and a future plan make the exit feel friendly."
+    },
+    {
+      "clue": "[UNIT 02] Which sentence uses a frequency adverb correctly?",
+      "options": [
+        "I always review my notes after dinner.",
+        "I review always my notes after dinner.",
+        "I always reviewing my notes after dinner.",
+        "I am always review my notes after dinner."
+      ],
+      "answer": "I always review my notes after dinner.",
+      "detail": "UNIT 02: Frequency adverbs go before the main verb."
+    },
+    {
+      "clue": "[UNIT 02] Which sentence describes a regular job correctly?",
+      "options": [
+        "I work part-time at a café.",
+        "I am work part-time at a café.",
+        "I working part-time at a café.",
+        "I worked at a café every day tomorrow."
+      ],
+      "answer": "I work part-time at a café.",
+      "detail": "UNIT 02: The simple present describes a regular job."
+    },
+    {
+      "clue": "[UNIT 02] Which question asks about someone's daily routine?",
+      "options": [
+        "What does your usual weekday look like?",
+        "What did you do yesterday?",
+        "Where will you go tomorrow?",
+        "Have you finished the report?"
+      ],
+      "answer": "What does your usual weekday look like?",
+      "detail": "UNIT 02: 'Usual' and 'weekday' point to a regular routine, so the simple present fits."
+    },
+    {
+      "clue": "[UNIT 03] Which sentence uses 'be used to' correctly?",
+      "options": [
+        "She's used to working under pressure.",
+        "She's used to work under pressure.",
+        "She used work under pressure.",
+        "She is used working under pressure."
+      ],
+      "answer": "She's used to working under pressure.",
+      "detail": "UNIT 03: 'Be used to' is followed by -ing or a noun."
+    },
+    {
+      "clue": "[UNIT 03] Which sentence means you stopped doing something a long time ago?",
+      "options": [
+        "I used to live in Malang.",
+        "I'm used to living in Malang.",
+        "I live in Malang.",
+        "I'm living in Malang now."
+      ],
+      "answer": "I used to live in Malang.",
+      "detail": "UNIT 03: 'Used to' describes a past state or habit that no longer continues."
+    },
+    {
+      "clue": "[UNIT 03] Which word is a frequency adverb?",
+      "options": [
+        "often",
+        "yesterday",
+        "happy",
+        "because"
+      ],
+      "answer": "often",
+      "detail": "UNIT 03: Often, always, and usually show how frequently something happens."
+    },
+    {
+      "clue": "[UNIT 04] Which phrase has the adjectives in the correct order?",
+      "options": [
+        "a beautiful old wooden chair",
+        "an old beautiful wooden chair",
+        "a wooden beautiful old chair",
+        "an old wooden beautiful chair"
+      ],
+      "answer": "a beautiful old wooden chair",
+      "detail": "UNIT 04: Opinion, then age, then material, then the noun."
+    },
+    {
+      "clue": "[UNIT 04] Which phrase describes shape?",
+      "options": [
+        "a round table",
+        "a wooden table",
+        "a table, round",
+        "a table of round"
+      ],
+      "answer": "a round table",
+      "detail": "UNIT 04: Shape adjectives like round or square come before the noun."
+    },
+    {
+      "clue": "[UNIT 04] Which sentence explains what an object is used for?",
+      "options": [
+        "It's a handy tool for cutting paper.",
+        "It cuts paper handy.",
+        "Tool it's handy paper.",
+        "It's paper cutting tool handy."
+      ],
+      "answer": "It's a handy tool for cutting paper.",
+      "detail": "UNIT 04: 'For + -ing' explains the purpose of an object."
+    },
+    {
+      "clue": "[UNIT 05] Which sentence describes someone's hair?",
+      "options": [
+        "He has short curly hair.",
+        "He is short curly hair.",
+        "He hair is short.",
+        "He curly has hair short."
+      ],
+      "answer": "He has short curly hair.",
+      "detail": "UNIT 05: 'Has' + adjectives + hair describes physical features."
+    },
+    {
+      "clue": "[UNIT 05] Which word describes a positive personality trait?",
+      "options": [
+        "generous",
+        "rude",
+        "lazy",
+        "arrogant"
+      ],
+      "answer": "generous",
+      "detail": "UNIT 05: Generous means willing to give time, help, or money."
+    },
+    {
+      "clue": "[UNIT 05] Which sentence gives a balanced description of someone?",
+      "options": [
+        "She's very organized, although she can be a bit strict.",
+        "She's bad and strict.",
+        "She is strict only.",
+        "She never does anything right."
+      ],
+      "answer": "She's very organized, although she can be a bit strict.",
+      "detail": "UNIT 05: 'Although' and 'can be a bit' give a fair, balanced description."
+    },
+    {
+      "clue": "[UNIT 06] Which phrase is a polite way to ask a teacher for help?",
+      "options": [
+        "Would you mind explaining this part again?",
+        "Explain this again!",
+        "You have to explain it.",
+        "Just tell me."
+      ],
+      "answer": "Would you mind explaining this part again?",
+      "detail": "UNIT 06: 'Would you mind + -ing' is a polite request form."
+    },
+    {
+      "clue": "[UNIT 06] Which phrase asks for permission politely?",
+      "options": [
+        "May I borrow your notes for a moment?",
+        "I'm taking your notes.",
+        "Give me your notes.",
+        "Your notes are mine now."
+      ],
+      "answer": "May I borrow your notes for a moment?",
+      "detail": "UNIT 06: 'May I...?' asks permission politely."
+    },
+    {
+      "clue": "[UNIT 06] Which response accepts a request warmly?",
+      "options": [
+        "Sure, go ahead!",
+        "No way.",
+        "Ask someone else.",
+        "Figure it out yourself."
+      ],
+      "answer": "Sure, go ahead!",
+      "detail": "UNIT 06: 'Sure, go ahead' gives permission in a friendly way."
+    },
+    {
+      "clue": "[UNIT 07] Which instruction starts with the correct verb form?",
+      "options": [
+        "Take the stairs on your left.",
+        "You take the stairs.",
+        "Taking the stairs now.",
+        "The stairs you take."
+      ],
+      "answer": "Take the stairs on your left.",
+      "detail": "UNIT 07: Instructions start with the base verb: Take, Go, Turn."
+    },
+    {
+      "clue": "[UNIT 07] Which sentence describes where something is?",
+      "options": [
+        "It's on your right, next to the bank.",
+        "It's bank right.",
+        "Right bank it's on.",
+        "It bank next to right."
+      ],
+      "answer": "It's on your right, next to the bank.",
+      "detail": "UNIT 07: 'On your right' and 'next to' show location."
+    },
+    {
+      "clue": "[UNIT 07] Which word introduces the first step of instructions?",
+      "options": [
+        "First",
+        "Finally",
+        "Afterwards",
+        "Earlier"
+      ],
+      "answer": "First",
+      "detail": "UNIT 07: 'First' starts the steps, 'Then' continues, and 'Finally' ends."
+    },
+    {
+      "clue": "[UNIT 09] Which sentence politely disagrees with someone?",
+      "options": [
+        "I see your point, but I'd argue timing matters more.",
+        "You're completely wrong.",
+        "That's a stupid idea.",
+        "Nobody agrees with you."
+      ],
+      "answer": "I see your point, but I'd argue timing matters more.",
+      "detail": "UNIT 09: Acknowledge the other person first, then add your view."
+    },
+    {
+      "clue": "[UNIT 09] Which question keeps a conversation going?",
+      "options": [
+        "What got you into that field?",
+        "Yes or no?",
+        "Whatever.",
+        "Okay, bye."
+      ],
+      "answer": "What got you into that field?",
+      "detail": "UNIT 09: Open 'what' and 'how' questions keep the conversation flowing."
+    },
+    {
+      "clue": "[UNIT 09] Which line politely asks to join a group?",
+      "options": [
+        "Mind if I join you?",
+        "Move over.",
+        "I'm joining, deal with it.",
+        "Why are you all here?"
+      ],
+      "answer": "Mind if I join you?",
+      "detail": "UNIT 09: 'Mind if I join you?' asks permission before joining."
+    },
+    {
+      "clue": "[UNIT 10] Which opening line hooks the listener in a story?",
+      "options": [
+        "At first everything seemed normal, until suddenly the lights went out.",
+        "Yesterday was Tuesday.",
+        "The report has six pages.",
+        "I went home."
+      ],
+      "answer": "At first everything seemed normal, until suddenly the lights went out.",
+      "detail": "UNIT 10: Building tension makes a story more engaging."
+    },
+    {
+      "clue": "[UNIT 10] Which phrase links a cause to its result in a news report?",
+      "options": [
+        "as a result",
+        "however",
+        "yesterday",
+        "nevertheless"
+      ],
+      "answer": "as a result",
+      "detail": "UNIT 10: 'As a result' connects a cause to its effect."
+    },
+    {
+      "clue": "[UNIT 10] Which sentence gives the main event first?",
+      "options": [
+        "This morning, students launched a new speaking app.",
+        "A new speaking app was something that students maybe launched.",
+        "Speaking app, students, morning.",
+        "Morning was cold and students were there."
+      ],
+      "answer": "This morning, students launched a new speaking app.",
+      "detail": "UNIT 10: Start with the main event, then add time and details."
+    },
+    {
+      "clue": "[UNIT 11] Which sentence shows a change over time?",
+      "options": [
+        "Compared to five years ago, online teamwork is second nature.",
+        "Five years ago, online teamwork is.",
+        "Online teamwork is nature second.",
+        "Teamwork online five ago."
+      ],
+      "answer": "Compared to five years ago, online teamwork is second nature.",
+      "detail": "UNIT 11: 'Compared to' + a past time sets up the contrast."
+    },
+    {
+      "clue": "[UNIT 11] Which phrase describes a growing trend?",
+      "options": [
+        "More and more people are learning online.",
+        "People learn online once in a while.",
+        "People learned online yesterday.",
+        "People used to learn online."
+      ],
+      "answer": "More and more people are learning online.",
+      "detail": "UNIT 11: 'More and more' + present continuous shows a growing trend."
+    },
+    {
+      "clue": "[UNIT 11] Which sentence is correct?",
+      "options": [
+        "We used to meet in the library, whereas now we meet online.",
+        "We used to met in the library.",
+        "We are used to meet in the library.",
+        "We usually used to meet in the library."
+      ],
+      "answer": "We used to meet in the library, whereas now we meet online.",
+      "detail": "UNIT 11: 'Used to' takes the base verb, and 'whereas' contrasts past and present."
+    },
+    {
+      "clue": "[UNIT 12] Which hypothetical sentence is correct?",
+      "options": [
+        "If I were you, I would apologize first.",
+        "If I am you, I would apologize.",
+        "If I will be you, I would apologize.",
+        "If I was you, I will apologize."
+      ],
+      "answer": "If I were you, I would apologize first.",
+      "detail": "UNIT 12: The second conditional uses the past after 'if' and 'would' + base verb."
+    },
+    {
+      "clue": "[UNIT 12] Which response is nonjudgmental?",
+      "options": [
+        "Rather than assuming carelessness, I would ask what blocked their progress.",
+        "They're obviously lazy.",
+        "I'd report them immediately.",
+        "It's their fault, not mine."
+      ],
+      "answer": "Rather than assuming carelessness, I would ask what blocked their progress.",
+      "detail": "UNIT 12: Focus on obstacles, not blame."
+    },
+    {
+      "clue": "[UNIT 12] Which sentence calmly suggests a solution?",
+      "options": [
+        "I would check in calmly to find the bottleneck, then split the tasks.",
+        "We are doomed.",
+        "I'd quit the team.",
+        "Let it be."
+      ],
+      "answer": "I would check in calmly to find the bottleneck, then split the tasks.",
+      "detail": "UNIT 12: Calm check-ins and fair task splits solve problems."
+    },
+    {
+      "clue": "[UNIT 13] Which sentence shows empathy?",
+      "options": [
+        "I can imagine how frustrating that must be.",
+        "That's not my problem.",
+        "Calm down, it's nothing.",
+        "You're overreacting."
+      ],
+      "answer": "I can imagine how frustrating that must be.",
+      "detail": "UNIT 13: Empathy names the feeling before solving the problem."
+    },
+    {
+      "clue": "[UNIT 13] Which apology is sincere and direct?",
+      "options": [
+        "I'm sorry for the late reply. I'll get back to you today.",
+        "Sorry, but it wasn't my fault.",
+        "Whatever, sorry.",
+        "Mistakes happen."
+      ],
+      "answer": "I'm sorry for the late reply. I'll get back to you today.",
+      "detail": "UNIT 13: A direct apology with a concrete next step builds trust."
+    },
+    {
+      "clue": "[UNIT 13] Which phrase offers a clear fix?",
+      "options": [
+        "I'll reship the order by tomorrow.",
+        "We'll see what happens.",
+        "It will probably be fine.",
+        "Not my department."
+      ],
+      "answer": "I'll reship the order by tomorrow.",
+      "detail": "UNIT 13: A specific action and timeline reassure the customer."
+    },
+    {
+      "clue": "[UNIT 14] Which phrase introduces a compromise?",
+      "options": [
+        "One practical compromise is to keep the design clean and test it with peers.",
+        "You must accept this.",
+        "No, that won't work.",
+        "Let's just argue."
+      ],
+      "answer": "One practical compromise is to keep the design clean and test it with peers.",
+      "detail": "UNIT 14: 'One practical compromise is to...' presents a middle ground."
+    },
+    {
+      "clue": "[UNIT 14] Which phrase summarizes what was agreed?",
+      "options": [
+        "Just to recap, we agreed to keep six units.",
+        "Honestly, nobody cares.",
+        "Forget it.",
+        "I already said that."
+      ],
+      "answer": "Just to recap, we agreed to keep six units.",
+      "detail": "UNIT 14: 'Just to recap' summarizes agreed points clearly."
+    },
+    {
+      "clue": "[UNIT 14] Which suggestion sounds collaborative?",
+      "options": [
+        "What if we combine both ideas?",
+        "Do it my way now.",
+        "Stop talking.",
+        "Your idea is bad."
+      ],
+      "answer": "What if we combine both ideas?",
+      "detail": "UNIT 14: 'What if we...' invites shared decisions."
     }
   ],
-  words: [
-    {
-      clue: "The pleasant, earthy smell after rain falls on dry ground.",
-      options: ["luminous", "petrichor", "serene", "sonder"],
-      answer: "petrichor",
-      detail: "PETRICHOR (/ˈpet.rɪ.kɔːr/): Earthy post-rain scent."
-    },
-    {
-      clue: "Realizing every stranger has a life as complex as your own.",
-      options: ["sonder", "wanderlust", "audacious", "mellifluous"],
-      answer: "sonder",
-      detail: "SONDER (/ˈsɒn.dər/): Deep awareness of others' inner lives."
-    },
-    {
-      clue: "Too great or beautiful to be described in words.",
-      options: ["serene", "ineffable", "petrichor", "audacious"],
-      answer: "ineffable",
-      detail: "INEFFABLE (/ɪnˈef.ə.bəl/): Beyond words."
-    },
-    {
-      clue: "A voice or sound that is sweet, smooth, and pleasant to hear.",
-      options: ["enigmatic", "euphoria", "mellifluous", "sonder"],
-      answer: "mellifluous",
-      detail: "MELLIFLUOUS (/məˈlɪf.lu.əs/): Flowing like honey."
-    },
-    {
-      clue: "Lasting for only a very short time; fleeting.",
-      options: ["resilient", "ephemeral", "quintessential", "luminous"],
-      answer: "ephemeral",
-      detail: "EPHEMERAL (/ɪˈfem.ər.əl/): Short-lived."
-    },
-    {
-      clue: "Finding valuable or happy things by pure lucky chance.",
-      options: ["nostalgia", "serendipity", "wanderlust", "sonder"],
-      answer: "serendipity",
-      detail: "SERENDIPITY (/ˌser.ənˈdɪp.ə.ti/): Happy accidental discovery."
-    },
-    {
-      clue: "Fluent, persuasive, and expressive in speaking or writing.",
-      options: ["enigmatic", "eloquent", "serene", "ephemeral"],
-      answer: "eloquent",
-      detail: "ELOQUENT (/ˈel.ə.kwənt/): Persuasive and well-spoken."
-    },
-    {
-      clue: "Able to recover quickly from setbacks or tough conditions.",
-      options: ["resilient", "luminous", "nostalgia", "petrichor"],
-      answer: "resilient",
-      detail: "RESILIENT (/rɪˈzɪl.jənt/): Bouncing back strong."
-    }
-  ],
-  idioms: [
-    {
-      clue: "Force yourself to do something tough you've been delaying.",
-      options: ["Cut to the chase", "Bite the bullet", "Walking on air", "Once in a blue moon"],
-      answer: "Bite the bullet",
-      detail: "BITE THE BULLET: Facing a tough task head-on."
-    },
-    {
-      clue: "Study or work late into the night.",
-      options: ["Burn the midnight oil", "A penny for your thoughts", "Read between the lines", "Bite the bullet"],
-      answer: "Burn the midnight oil",
-      detail: "BURN THE MIDNIGHT OIL: Working late at night."
-    },
-    {
-      clue: "Understand the hidden meaning behind someone's words.",
-      options: ["Once in a blue moon", "Walking on air", "Read between the lines", "Cut to the chase"],
-      answer: "Read between the lines",
-      detail: "READ BETWEEN THE LINES: Catching implicit meaning."
-    },
-    {
-      clue: "Something that happens very rarely.",
-      options: ["Once in a blue moon", "Burn the midnight oil", "A penny for your thoughts", "Cut to the chase"],
-      answer: "Once in a blue moon",
-      detail: "ONCE IN A BLUE MOON: Almost never."
-    },
-    {
-      clue: "Get straight to the main point without wasting time.",
-      options: ["Once in a blue moon", "Cut to the chase", "Walking on air", "Bite the bullet"],
-      answer: "Cut to the chase",
-      detail: "CUT TO THE CHASE: Skipping fluff."
-    },
-    {
-      clue: "Feeling extraordinarily happy after great news.",
-      options: ["Walking on air", "Burn the midnight oil", "Read between the lines", "Cut to the chase"],
-      answer: "Walking on air",
-      detail: "WALKING ON AIR: Overjoyed."
-    }
-  ]
+  words: [],
+  idioms: []
 };
+
+// Word and idiom quizzes are generated from VOCAB_DATA and IDIOMS_DATA
+function placeAnswer(answer, distractors, index) {
+  const options = [...distractors];
+  options.splice(index % 4, 0, answer);
+  return options;
+}
+
+function pickDistractors(pool, index, count) {
+  const picks = [];
+  for (let k = 0; picks.length < count && k < pool.length * 3; k++) {
+    const item = pool[(index * 3 + k * 7) % pool.length];
+    if (!picks.includes(item)) picks.push(item);
+  }
+  return picks;
+}
+
+QUIZ_DECKS.words = VOCAB_DATA.map((w, i) => {
+  const others = VOCAB_DATA.filter((x) => x.id !== w.id).map((x) => x.word.toLowerCase());
+  const options = placeAnswer(w.word.toLowerCase(), pickDistractors(others, i, 3), i);
+  return {
+    clue: w.definition,
+    options,
+    answer: w.word.toLowerCase(),
+    detail: `${w.word.toUpperCase()} (${w.ipa}): ${w.example}`,
+  };
+});
+
+QUIZ_DECKS.idioms = IDIOMS_DATA.map((item, i) => {
+  const others = IDIOMS_DATA.filter((x) => x.idiom !== item.idiom).map((x) => x.idiom);
+  const options = placeAnswer(item.idiom, pickDistractors(others, i, 3), i);
+  return {
+    clue: item.meaning,
+    options,
+    answer: item.idiom,
+    detail: `${item.idiom.toUpperCase()}: "${item.example}"`,
+  };
+});
 
 // ==========================================================================
 // State
@@ -1546,7 +3009,8 @@ const state = {
   searchQuery: "",
   selectedCategory: "All",
   idiomSearchQuery: "",
-  masteredIds: JSON.parse(localStorage.getItem("lexivibe_v6_mastered") || "[]"),
+  idiomCategory: "All",
+  masteredIds: [],
   activeStoryIndex: 0,
   storyFontSize: 1.04,
   isReadingStory: false,
@@ -1565,6 +3029,14 @@ const state = {
 // ==========================================================================
 // Run each setup step on its own, so an error in one section cannot stop the others
 // (for example, the quiz topic buttons). Errors are logged to the browser console.
+async function safeInitAsync(name, fn) {
+  try {
+    await fn();
+  } catch (err) {
+    console.error(`Init failed: ${name}`, err);
+  }
+}
+
 function safeInit(name, fn) {
   try {
     fn();
@@ -1573,7 +3045,9 @@ function safeInit(name, fn) {
   }
 }
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
+  await safeInitAsync("auth", bootApp);
+  safeInit("profile", () => setupProfile());
   safeInit("theme", () => applyTheme(state.theme));
   safeInit("quote", () => { pickRandomQuoteOnOpen(); setupQuoteControls(); });
   safeInit("spotlight", () => setupSpotlightControls());
@@ -1727,6 +3201,7 @@ function setupThemeToggle() {
 }
 
 function navigateTo(pageId) {
+  if (!currentUser()) pageId = "login";
   state.activePage = pageId;
   stopSpeech();
 
@@ -1740,6 +3215,8 @@ function navigateTo(pageId) {
     }
   });
 
+  if (pageId === "profile") renderProfile();
+  if (pageId === "stories") markStoryRead(STORIES_DATA[state.activeStoryIndex].id);
   window.scrollTo({ top: 0, behavior: "smooth" });
   refreshScrollReveal();
 }
@@ -1927,10 +3404,10 @@ function setupVocabFilters() {
     renderVocabGrid();
   });
 
-  document.querySelectorAll(".cat-pill").forEach((pill) => {
+  document.querySelectorAll("#categoryPills .cat-pill").forEach((pill) => {
     pill.addEventListener("click", () => {
       state.selectedCategory = pill.dataset.cat;
-      document.querySelectorAll(".cat-pill").forEach((p) => p.classList.remove("active"));
+      document.querySelectorAll("#categoryPills .cat-pill").forEach((p) => p.classList.remove("active"));
       pill.classList.add("active");
       renderVocabGrid();
     });
@@ -1946,7 +3423,7 @@ function toggleMastered(wordId) {
     state.masteredIds.push(wordId);
     showToast("MASTERED");
   }
-  localStorage.setItem("lexivibe_v6_mastered", JSON.stringify(state.masteredIds));
+  updateProgress((p) => { p.mastered = [...state.masteredIds]; });
   renderVocabGrid();
   updateProgressStats();
 
@@ -2115,7 +3592,7 @@ function renderUnitsLab() {
   renderWarmup(current);
   renderReadFirst(current);
   renderModelAnswer(current);
-  const savedPractice = localStorage.getItem(`lexivibe_u6_${current.unit}`) || "";
+  const savedPractice = getNote(`u_${current.unit}`);
   document.getElementById("unitPracticeInput").value = savedPractice;
   document.getElementById("unitPracticeSavedMsg").innerHTML = "";
 }
@@ -2213,7 +3690,8 @@ function setupUnitControls() {
   document.getElementById("saveUnitPracticeBtn").addEventListener("click", () => {
     const current = UNITS_DATA.find((u) => u.unit === state.activeUnitNumber) || UNITS_DATA[0];
     const text = document.getElementById("unitPracticeInput").value.trim();
-    localStorage.setItem(`lexivibe_u6_${current.unit}`, text);
+    setNote(`u_${current.unit}`, text);
+    if (text) markPracticed(current.unit);
     document.getElementById("unitPracticeSavedMsg").innerHTML = `${ICONS.check} <span>Saved!</span>`;
   });
 }
@@ -2226,10 +3704,11 @@ function renderIdiomsAndUpgrades() {
 
   const filteredIdioms = IDIOMS_DATA.filter(
     (item) =>
-      item.idiom.toLowerCase().includes(q) ||
-      item.meaning.toLowerCase().includes(q) ||
-      item.example.toLowerCase().includes(q) ||
-      item.tag.toLowerCase().includes(q)
+      (state.idiomCategory === "All" || item.category === state.idiomCategory) &&
+      (item.idiom.toLowerCase().includes(q) ||
+        item.meaning.toLowerCase().includes(q) ||
+        item.example.toLowerCase().includes(q) ||
+        item.tag.toLowerCase().includes(q))
   );
 
   const idiomsGrid = document.getElementById("idiomsGrid");
@@ -2298,6 +3777,15 @@ function setupIdiomFilters() {
     state.idiomSearchQuery = e.target.value.trim();
     renderIdiomsAndUpgrades();
   });
+
+  document.querySelectorAll("#idiomCategoryPills .cat-pill").forEach((pill) => {
+    pill.addEventListener("click", () => {
+      state.idiomCategory = pill.dataset.icat;
+      document.querySelectorAll("#idiomCategoryPills .cat-pill").forEach((p) => p.classList.remove("active"));
+      pill.classList.add("active");
+      renderIdiomsAndUpgrades();
+    });
+  });
 }
 
 // ==========================================================================
@@ -2334,7 +3822,7 @@ function renderStories() {
     })
     .join("");
 
-  const savedNote = localStorage.getItem(`lexivibe_s6_${story.id}`) || "";
+  const savedNote = getNote(`s_${story.id}`);
   document.getElementById("reflectionInput").value = savedNote;
   document.getElementById("reflectionSavedMsg").innerHTML = "";
 }
@@ -2375,7 +3863,7 @@ function setupStoryControls() {
   document.getElementById("saveReflectionBtn").addEventListener("click", () => {
     const story = STORIES_DATA[state.activeStoryIndex];
     const text = document.getElementById("reflectionInput").value.trim();
-    localStorage.setItem(`lexivibe_s6_${story.id}`, text);
+    setNote(`s_${story.id}`, text);
     document.getElementById("reflectionSavedMsg").innerHTML = `${ICONS.check} <span>Saved!</span>`;
   });
 }
@@ -2616,6 +4104,7 @@ function showQuizResults() {
   document.getElementById("quizResultArea").classList.remove("hidden");
 
   const pct = Math.round((state.quizScore / deck.length) * 100);
+  recordQuizResult(pct, state.quizScore, deck.length);
   document.getElementById("resultBadge").textContent = `${state.quizScore}/${deck.length}`;
   document.getElementById("resultHeading").textContent = `SCORE: ${pct}%`;
   document.getElementById("resultSummary").textContent =
@@ -2649,4 +4138,502 @@ function showToast(message) {
   toast.classList.add("show");
   clearTimeout(toastTimer);
   toastTimer = setTimeout(() => toast.classList.remove("show"), 1800);
+}
+
+
+// ==========================================================================
+// Accounts (Supabase magic link), synced progress, and profile dashboard
+// ==========================================================================
+const SUPABASE_URL = "https://pbvlcjlgxbxpxmzzcigf.supabase.co";
+const SUPABASE_KEY = "sb_publishable_uV4Wc5Pe2IJdGvlxJZCwBg_4iIsLspV";
+// Set to true only after the Google provider is enabled in Supabase (Authentication > Providers > Google)
+const GOOGLE_LOGIN_ENABLED = false;
+const sb = window.supabase ? window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY) : null;
+
+let authUser = null;     // Supabase auth user (id, email)
+let profile = null;      // row from public.profiles (name, avatar_url, created_at)
+let progressCache = null; // row from public.progress, kept in memory and saved back
+let saveTimer = null;
+
+const EMPTY_PROGRESS = () => ({
+  mastered: [], quizResults: [], bestByUnit: {}, practiced: [], storiesRead: [], activity: {}, notes: {},
+});
+
+const VOCAB_CATEGORIES = ["Emotion & Mind", "Nature & Atmosphere", "Character & Style", "Time & Society"];
+
+// Read-only helper for the old on-device accounts, used only to import their progress once
+const DB = {
+  load(key, fallback) {
+    try {
+      const value = JSON.parse(localStorage.getItem(key));
+      return value ?? fallback;
+    } catch (e) {
+      return fallback;
+    }
+  },
+};
+
+function currentUser() {
+  if (!authUser || !profile) return null;
+  return {
+    id: authUser.id,
+    name: profile.name,
+    email: authUser.email,
+    avatar: profile.avatar_url,
+    createdAt: profile.created_at,
+  };
+}
+
+function getProgress() {
+  return progressCache || EMPTY_PROGRESS();
+}
+
+function localDateKey(d = new Date()) {
+  const m = String(d.getMonth() + 1).padStart(2, "0");
+  const day = String(d.getDate()).padStart(2, "0");
+  return `${d.getFullYear()}-${m}-${day}`;
+}
+
+function updateProgress(mutator) {
+  if (!authUser) return;
+  const p = getProgress();
+  mutator(p);
+  const today = localDateKey();
+  p.activity[today] = (p.activity[today] || 0) + 1;
+  progressCache = p;
+  scheduleProgressSave();
+}
+
+function getNote(key) {
+  return getProgress().notes[key] || "";
+}
+
+function setNote(key, text) {
+  updateProgress((p) => { p.notes[key] = text; });
+}
+
+function scheduleProgressSave() {
+  clearTimeout(saveTimer);
+  saveTimer = setTimeout(saveProgressNow, 700);
+}
+
+async function saveProgressNow() {
+  if (!sb || !authUser || !progressCache) return;
+  const { error } = await sb.from("progress").upsert({
+    user_id: authUser.id,
+    data: progressCache,
+    updated_at: new Date().toISOString(),
+  });
+  if (error) showToast("SAVE FAILED. CHECK YOUR CONNECTION.");
+}
+
+document.addEventListener("visibilitychange", () => {
+  if (document.visibilityState === "hidden" && saveTimer) {
+    clearTimeout(saveTimer);
+    saveProgressNow();
+  }
+});
+
+function markStoryRead(id) {
+  updateProgress((p) => { if (!p.storiesRead.includes(id)) p.storiesRead.push(id); });
+}
+
+function markPracticed(unitNum) {
+  updateProgress((p) => { if (!p.practiced.includes(unitNum)) p.practiced.push(unitNum); });
+}
+
+function recordQuizResult(pct, score, total) {
+  const unit = state.quizMode === "units" && state.quizUnit !== "all" ? state.quizUnit : null;
+  const label = unit ? `UNIT ${unit}` : state.quizMode.toUpperCase();
+  updateProgress((p) => {
+    p.quizResults.unshift({ date: localDateKey(), label, pct, score, total });
+    p.quizResults = p.quizResults.slice(0, 50);
+    if (unit) p.bestByUnit[unit] = Math.max(p.bestByUnit[unit] || 0, pct);
+  });
+}
+
+function currentStreak(activity) {
+  const d = new Date();
+  if (!activity[localDateKey(d)]) d.setDate(d.getDate() - 1);
+  let streak = 0;
+  while (activity[localDateKey(d)]) {
+    streak++;
+    d.setDate(d.getDate() - 1);
+  }
+  return streak;
+}
+
+function renderNavAvatar() {
+  const chip = document.getElementById("navProfileBtn");
+  const user = currentUser();
+  if (!chip || !user) return;
+  chip.innerHTML = user.avatar
+    ? `<img src="${user.avatar}" alt="" />`
+    : escAttr((user.name || "?").trim().charAt(0).toUpperCase());
+  chip.setAttribute("aria-label", `Open profile for ${user.name}`);
+}
+
+function setLoggedOut(message = "") {
+  authUser = null;
+  profile = null;
+  progressCache = null;
+  document.body.classList.add("logged-out");
+  document.getElementById("loginError").textContent = message;
+  navigateTo("login");
+}
+
+async function bootApp() {
+  if (!sb) {
+    setLoggedOut("Could not load the sign-in service. Check your connection and refresh.");
+    return;
+  }
+  const { data, error } = await sb.auth.getSession();
+  if (error || !data.session) {
+    setLoggedOut();
+    return;
+  }
+  authUser = data.session.user;
+  await loadProfile();
+  await loadProgress();
+  state.masteredIds = getProgress().mastered.slice();
+  document.body.classList.remove("logged-out");
+  renderNavAvatar();
+  navigateTo("home");
+}
+
+async function loadProfile() {
+  const { data, error } = await sb.from("profiles").select("*").eq("id", authUser.id).maybeSingle();
+  if (error) {
+    showToast("COULD NOT LOAD PROFILE");
+    profile = { name: authUser.email.split("@")[0], avatar_url: null, created_at: new Date().toISOString() };
+    return;
+  }
+  if (data) {
+    profile = data;
+    return;
+  }
+  const meta = authUser.user_metadata || {};
+  const name = meta.name || meta.full_name || meta.user_name || authUser.email.split("@")[0];
+  const { data: created } = await sb
+    .from("profiles")
+    .insert({ id: authUser.id, name, email: authUser.email })
+    .select()
+    .single();
+  profile = created || { name, avatar_url: null, created_at: new Date().toISOString() };
+}
+
+function progressHasData(p) {
+  return p.mastered.length || p.quizResults.length || p.practiced.length
+    || p.storiesRead.length || Object.keys(p.notes).length;
+}
+
+async function loadProgress() {
+  const { data, error } = await sb.from("progress").select("data").eq("user_id", authUser.id).maybeSingle();
+  if (error) {
+    showToast("COULD NOT LOAD PROGRESS");
+    progressCache = EMPTY_PROGRESS();
+    return;
+  }
+  if (data) {
+    const remote = data.data || {};
+    progressCache = { ...EMPTY_PROGRESS(), ...remote, notes: { ...(remote.notes || {}) } };
+    return;
+  }
+  progressCache = EMPTY_PROGRESS();
+  importLegacyProgress();
+}
+
+// One-time import of progress saved by the earlier on-device version
+function importLegacyProgress() {
+  const legacyId = DB.load("bb_session", null);
+  if (!legacyId) return;
+  const legacy = DB.load(`bb_${legacyId}_progress`, null);
+  if (!legacy) return;
+
+  const merged = { ...EMPTY_PROGRESS(), ...legacy, notes: {} };
+  const notePattern = new RegExp(`^bb_${legacyId}_([us])_(.+)$`);
+  Object.keys(localStorage).forEach((key) => {
+    const match = key.match(notePattern);
+    if (match) merged.notes[`${match[1]}_${match[2]}`] = localStorage.getItem(key) || "";
+  });
+
+  if (!progressHasData(merged)) return;
+  progressCache = merged;
+  scheduleProgressSave();
+  showToast("LOCAL PROGRESS IMPORTED");
+}
+
+async function handleLoginSubmit(e) {
+  e.preventDefault();
+  const name = document.getElementById("loginName").value.trim();
+  const email = document.getElementById("loginEmail").value.trim();
+  const err = document.getElementById("loginError");
+  const msg = document.getElementById("loginMessage");
+  const btn = e.target.querySelector("button[type='submit']");
+
+  if (name.length < 2) {
+    err.textContent = "Please enter your name (at least 2 characters).";
+    return;
+  }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    err.textContent = "Please enter a valid email address.";
+    return;
+  }
+  if (!sb) {
+    err.textContent = "Could not connect to the sign-in service.";
+    return;
+  }
+
+  err.textContent = "";
+  msg.textContent = "";
+  btn.disabled = true;
+  btn.textContent = "SENDING...";
+
+  const { error } = await sb.auth.signInWithOtp({
+    email,
+    options: {
+      emailRedirectTo: window.location.origin + window.location.pathname,
+      data: { name },
+    },
+  });
+
+  btn.disabled = false;
+  btn.textContent = "SEND SIGN-IN LINK →";
+
+  if (error) {
+    err.textContent = error.message;
+    return;
+  }
+  msg.textContent = `Link sent to ${email}. Open it on this device to continue.`;
+}
+
+async function signOutAndReload() {
+  if (sb) await sb.auth.signOut();
+  location.reload();
+}
+
+function statCard(label, value, tagClass) {
+  return `
+    <div class="pf-stat">
+      <span class="tag-pill ${tagClass}">${label}</span>
+      <div class="pf-stat-value">${value}</div>
+    </div>`;
+}
+
+function renderProfile() {
+  const root = document.getElementById("profileRoot");
+  const user = currentUser();
+  if (!root || !user) return;
+
+  const p = getProgress();
+  const masteredWords = p.mastered.filter((id) => VOCAB_DATA.some((w) => w.id === id)).length;
+  const wordPct = Math.round((masteredWords / VOCAB_DATA.length) * 100);
+  const avg = p.quizResults.length
+    ? Math.round(p.quizResults.reduce((sum, r) => sum + r.pct, 0) / p.quizResults.length)
+    : null;
+  const streak = currentStreak(p.activity);
+  const joined = new Date(user.createdAt).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" });
+
+  const unitBars = UNITS_DATA.map((u) => {
+    const key = String(u.unit).padStart(2, "0");
+    const pct = p.bestByUnit[key] || 0;
+    const color = u.exam === "MIDTERM" ? "bg-sky" : "bg-coral";
+    return `
+      <div class="pf-bar-col" title="Unit ${key}: best ${pct}%">
+        <span class="pf-bar-val">${pct}%</span>
+        <div class="pf-bar-track"><div class="pf-bar-fill ${color}" style="height:${pct}%"></div></div>
+        <span class="pf-bar-label">${key}</span>
+      </div>`;
+  }).join("");
+
+  const categoryBars = VOCAB_CATEGORIES.map((c) => {
+    const total = VOCAB_DATA.filter((w) => w.category === c).length;
+    const done = p.mastered.filter((id) => VOCAB_DATA.some((w) => w.id === id && w.category === c)).length;
+    const pct = total ? Math.round((done / total) * 100) : 0;
+    return `
+      <div class="pf-hbar">
+        <div class="pf-hbar-head"><span>${c.toUpperCase()}</span><span>${done}/${total}</span></div>
+        <div class="pf-hbar-track"><div class="pf-hbar-fill bg-mint" style="width:${pct}%"></div></div>
+      </div>`;
+  }).join("");
+
+  const days = [];
+  for (let i = 6; i >= 0; i--) {
+    const d = new Date();
+    d.setDate(d.getDate() - i);
+    days.push({
+      label: d.toLocaleDateString("en-US", { weekday: "short" }).toUpperCase(),
+      count: p.activity[localDateKey(d)] || 0,
+    });
+  }
+  const maxCount = Math.max(1, ...days.map((d) => d.count));
+  const dayBars = days.map((d) => `
+      <div class="pf-bar-col">
+        <span class="pf-bar-val">${d.count}</span>
+        <div class="pf-bar-track"><div class="pf-bar-fill bg-lilac" style="height:${Math.round((d.count / maxCount) * 100)}%"></div></div>
+        <span class="pf-bar-label">${d.label}</span>
+      </div>`).join("");
+
+  const recent = p.quizResults.slice(0, 5).map((r) => `
+      <li><span>${r.date}</span><span>${r.label}</span><strong>${r.score}/${r.total} · ${r.pct}%</strong></li>`).join("")
+    || `<li class="pf-empty">No quiz attempts yet. Try a quick quiz!</li>`;
+
+  const avatar = user.avatar
+    ? `<img src="${user.avatar}" alt="Your profile photo" />`
+    : `<span>${escAttr((user.name || "?").trim().charAt(0).toUpperCase())}</span>`;
+
+  root.innerHTML = `
+    <div class="pf-header">
+      <div class="pf-avatar">${avatar}</div>
+      <div class="pf-id">
+        <span class="tag-pill bg-yellow">MEMBER SINCE ${joined.toUpperCase()}</span>
+        <div class="pf-name">${escAttr(user.name)}</div>
+        <div class="pf-meta">${escAttr(user.email)}</div>
+        <div class="pf-actions">
+          <label class="brutal-btn-sm bg-yellow pf-upload-btn" for="avatarInput">UPLOAD PHOTO</label>
+          <button type="button" class="brutal-btn-sm" data-action="logout">LOG OUT</button>
+        </div>
+        <form id="nameForm" class="pf-name-form">
+          <input id="nameInput" type="text" maxlength="40" value="${escAttr(user.name)}" aria-label="Edit name" />
+          <button type="submit" class="brutal-btn-sm bg-sky">SAVE NAME</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="pf-stats">
+      ${statCard("WORDS MASTERED", `${masteredWords}/${VOCAB_DATA.length}`, "bg-mint")}
+      ${statCard("QUIZ AVERAGE", avg === null ? "-" : `${avg}%`, "bg-yellow")}
+      ${statCard("QUIZ ATTEMPTS", p.quizResults.length, "bg-sky")}
+      ${statCard("UNITS PRACTICED", `${p.practiced.length}/${UNITS_DATA.length}`, "bg-coral")}
+      ${statCard("STORIES READ", `${p.storiesRead.length}/${STORIES_DATA.length}`, "bg-lilac")}
+      ${statCard("DAY STREAK", streak, "bg-peach")}
+    </div>
+
+    <div class="pf-panel">
+      <div class="pf-panel-title">BEST QUIZ SCORE PER UNIT</div>
+      <div class="pf-bars">${unitBars}</div>
+      <div class="pf-legend"><span class="tag-pill bg-sky">MIDTERM</span><span class="tag-pill bg-coral">FINAL</span></div>
+    </div>
+
+    <div class="pf-grid-2">
+      <div class="pf-panel">
+        <div class="pf-panel-title">VOCABULARY PROGRESS</div>
+        <div class="pf-donut-wrap">
+          <div class="pf-donut" style="background: conic-gradient(var(--pop-mint) ${wordPct * 3.6}deg, var(--surface-alt) 0deg);">
+            <div class="pf-donut-inner">${wordPct}%</div>
+          </div>
+          <div class="pf-hbars">${categoryBars}</div>
+        </div>
+      </div>
+
+      <div class="pf-panel">
+        <div class="pf-panel-title">ACTIVITY · LAST 7 DAYS</div>
+        <div class="pf-bars pf-bars-small">${dayBars}</div>
+      </div>
+    </div>
+
+    <div class="pf-panel">
+      <div class="pf-panel-title">RECENT QUIZ ATTEMPTS</div>
+      <ul class="pf-list">${recent}</ul>
+    </div>`;
+}
+
+function setupProfile() {
+  document.getElementById("loginForm").addEventListener("submit", handleLoginSubmit);
+  if (!GOOGLE_LOGIN_ENABLED) {
+    document.getElementById("googleLoginBtn").style.display = "none";
+    document.getElementById("loginDivider").style.display = "none";
+  }
+  document.getElementById("googleLoginBtn").addEventListener("click", async () => {
+    const err = document.getElementById("loginError");
+    if (!sb) {
+      err.textContent = "Could not connect to the sign-in service.";
+      return;
+    }
+    err.textContent = "";
+    const { error } = await sb.auth.signInWithOAuth({
+      provider: "google",
+      options: { redirectTo: window.location.origin + window.location.pathname },
+    });
+    if (error) err.textContent = error.message;
+  });
+
+  document.getElementById("avatarInput").addEventListener("change", (e) => {
+    const file = e.target.files && e.target.files[0];
+    e.target.value = "";
+    if (!file || !authUser) return;
+    if (!file.type.startsWith("image/")) {
+      showToast("PLEASE CHOOSE AN IMAGE FILE");
+      return;
+    }
+    const reader = new FileReader();
+    reader.onload = () => {
+      const img = new Image();
+      img.onload = () => {
+        const size = 256;
+        const canvas = document.createElement("canvas");
+        canvas.width = size;
+        canvas.height = size;
+        const side = Math.min(img.width, img.height);
+        const sx = (img.width - side) / 2;
+        const sy = (img.height - side) / 2;
+        canvas.getContext("2d").drawImage(img, sx, sy, side, side, 0, 0, size, size);
+        canvas.toBlob(async (blob) => {
+          if (!blob) {
+            showToast("COULD NOT PROCESS IMAGE");
+            return;
+          }
+          const path = `${authUser.id}/avatar.jpg`;
+          const { error: upErr } = await sb.storage
+            .from("avatars")
+            .upload(path, blob, { upsert: true, contentType: "image/jpeg" });
+          if (upErr) {
+            showToast(`UPLOAD FAILED: ${String(upErr.message || upErr).slice(0, 60).toUpperCase()}`);
+            console.error("Avatar upload error:", upErr);
+            return;
+          }
+          const { data: pub } = sb.storage.from("avatars").getPublicUrl(path);
+          const url = `${pub.publicUrl}?v=${Date.now()}`;
+          const { error } = await sb.from("profiles").update({ avatar_url: url }).eq("id", authUser.id);
+          if (error) {
+            showToast("PHOTO SAVE FAILED");
+            return;
+          }
+          profile.avatar_url = url;
+          renderProfile();
+          renderNavAvatar();
+          showToast("PHOTO SAVED");
+        }, "image/jpeg", 0.85);
+      };
+      img.src = reader.result;
+    };
+    reader.readAsDataURL(file);
+  });
+
+  const root = document.getElementById("profileRoot");
+  root.addEventListener("click", (e) => {
+    const btn = e.target.closest("[data-action]");
+    if (!btn) return;
+    if (btn.dataset.action === "logout") signOutAndReload();
+  });
+  root.addEventListener("submit", async (e) => {
+    if (e.target.id !== "nameForm") return;
+    e.preventDefault();
+    const name = document.getElementById("nameInput").value.trim();
+    if (name.length < 2) {
+      showToast("NAME MUST BE AT LEAST 2 CHARACTERS");
+      return;
+    }
+    const { error } = await sb.from("profiles").update({ name }).eq("id", authUser.id);
+    if (error) {
+      showToast("NAME SAVE FAILED");
+      return;
+    }
+    profile.name = name;
+    renderProfile();
+    renderNavAvatar();
+    showToast("NAME SAVED");
+  });
+
+  renderNavAvatar();
 }
